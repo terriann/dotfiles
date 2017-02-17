@@ -5,7 +5,7 @@ This is a repository of my MacOS dotfiles. Project is still a work in progress.
 *Files include*
 * `.profile` bash profile
 * `.gitconfig` git configuration
-* *  `.gitignore_global` a global git ignore
+    * `.gitignore_global` a global git ignore
 
 Requirements
 ------------
@@ -29,29 +29,24 @@ This command will create symlinks for config files in your home directory.
 Features
 -------
 *Private local settings*
-Create a .local copy of setting you don't want to publish. The configs will give higher precedence to private local settings named with a .local filename extension.
-ex. `~/.dotfiles/<<CONFIG>>.local`
 
-My To Do List
--------
-* Document functionality better
-_thoutbot did nicely in thier[readme.md](https://github.com/thoughtbot/dotfiles)_
-* Make thigs more modular
+Create a .local copy of setting you don't want to publish. The configs will give higher precedence to private local settings named with a .local filename extension.
+
+ex. `~/.dotfiles/<<CONFIG>>.local`
 
 What's in it?
 -------------
-
 [git](http://git-scm.com/) configuration:
 
-* Enables shell colors
+* Enables git shell colors
 * Adds a `a` alias to add files to repository
 * Adds a `aa` alias to add all unstaged files to repository
 * Adds a `br` alias to branch.
 * Adds a `ci` alias to commit
 
-** Incomplete **
+*<Incomplete>*
 
-Shell aliases and scripts:
+Shell aliases & configurations:
 
 *Shell Shortcuts*
 
@@ -71,7 +66,8 @@ Shell aliases and scripts:
 
 *Shortcuts for Common Applications*
 
-|   Alias   |   Description |
+|   Alias   |   Description     |
+|---    |---    |
 |   `sublime`    |    Open file (or current working directory) in Sublime Text 2    |
 |   `phpstorm`    |    Open file (or current working directory) in PhpStorm    |
 |   `photoshop`    |    Open file (or current working directory) in Adobe Photoshop CS    |
