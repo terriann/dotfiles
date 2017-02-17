@@ -53,19 +53,50 @@ What's in it?
 
 Shell aliases and scripts:
 
+*Shell Shortcuts*
+
 |   Alias    | Command      | Description   |
 |---    |---    |---    |
 |   `..`    |    `cd ../`   |       |
 |   `...`    |   `cd ../../`    |       |
 |   `mkdir`    |   `mkdir -p`    |   Create intermediate directories as required but will not error on existing directories    |
-|   `ll`    |   `ls -lhaG`    |       |
-|   `ls`    |   `ls -lhaG`    |       |
-|   `grep`    |   `grep --color=auto`    |       |
-|   `ps`    |   `ps -ax`    |       |
-|   `reload`    |   `source ~/.bash_profile`    |       |
+|   `ll`    |   `ls -lhaG`    |    Verbose, human readable color directory listing  |
+|   `ls`    |   `ls -GA`    |   Always ls in color and hide `.` and `..`    |
+|   `grep`    |   `grep --color=auto`    |    Always grep in color   |
+|   `ps`    |   `ps -ax`    |   Processes    |
+|   `reload`    |   `source ~/.bash_profile`    |   Refresh Shell    |
 |   `refresh`    |   `reload`    |    Because that part of my memory appears to be broken   |
+|   `catn`    |   `cat -n`    |   Concatenate and print content of files with line numbers    |
+|   `pubkey`    |       |   Copy public key to keyboard    |
 
+*Shortcuts for Common Applications*
 
+|   Alias   |   Description |
+|   `sublime`    |    Open file (or current working directory) in Sublime Text 2    |
+|   `phpstorm`    |    Open file (or current working directory) in PhpStorm    |
+|   `photoshop`    |    Open file (or current working directory) in Adobe Photoshop CS    |
+|   `preview`    |    Open file (or current working directory) in Preview    |
+|   `chrome`    |    Open file (or current working directory) in Google Chrome    |
+|   `safari`    |    Open file (or current working directory) in Safari    |
+|   `finder`    |    Open file (or current working directory) in Finder    |
+
+*Shortcuts for MacOS Configs and Settings*
+
+|   Alias    | Command      | Description   |
+|---    |---    |---    |
+|   `showdotfiles`    |   Make `*.` files visable throughout OS   |
+|   `hidedotfiles`    |   Make `*.` files hidden throughout OS   |
+|   `hidedeskicons`    |   Hide icons on desktop (good for presenting)   |
+|   `showdeskicons`    |   Show icons on desktop   |
+
+*Networking Shortcuts*
+
+|   Alias    | Command      | Description   |
+|---    |---    |---    |
+|   `flushdns`    |   `dscacheutil -flushcache`    |   Flush DNS    |
+|   `ip`    |   `ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\ -f2`    |   Simple IP information output    |
+|   `ip1`    |   `ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'`    |   More detailed IP information output    |
+|   `ip2`    |   `curl -s http://www.showmyip.com/simple/ | awk '{print $1}'`    |   External IP information output    |
 
 ## Resources
 Some of the resources I used and found while setting up configurations
