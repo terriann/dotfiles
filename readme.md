@@ -5,7 +5,7 @@ This is a repository of my MacOS dotfiles. Project is still a work in progress.
 *Files include*
 * `.profile` bash profile
 * `.gitconfig` git configuration
-**  `.gitignore_global` a global git ignore
+* *  `.gitignore_global` a global git ignore
 
 Requirements
 ------------
@@ -37,6 +37,35 @@ My To Do List
 * Document functionality better
 _thoutbot did nicely in thier[readme.md](https://github.com/thoughtbot/dotfiles)_
 * Make thigs more modular
+
+What's in it?
+-------------
+
+[git](http://git-scm.com/) configuration:
+
+* Enables shell colors
+* Adds a `a` alias to add files to repository
+* Adds a `aa` alias to add all unstaged files to repository
+* Adds a `br` alias to branch.
+* Adds a `ci` alias to commit
+
+** Incomplete **
+
+Shell aliases and scripts:
+
+|   Alias    | Command      | Description   |
+|---    |---    |---    |
+|   `..`    |    `cd ../`   |       |
+|   `...`    |   `cd ../../`    |       |
+|   `mkdir`    |   `mkdir -p`    |   Create intermediate directories as required but will not error on existing directories    |
+|   `ll`    |   `ls -lhaG`    |       |
+|   `ls`    |   `ls -lhaG`    |       |
+|   `grep`    |   `grep --color=auto`    |       |
+|   `ps`    |   `ps -ax`    |       |
+|   `reload`    |   `source ~/.bash_profile`    |       |
+|   `refresh`    |   `reload`    |    Because that part of my memory appears to be broken   |
+
+
 
 ## Resources
 Some of the resources I used and found while setting up configurations
