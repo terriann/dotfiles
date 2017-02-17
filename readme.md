@@ -78,8 +78,8 @@ Shell aliases & configurations:
 
 *Shortcuts for MacOS Configs and Settings*
 
-|   Alias    | Command      | Description   |
-|---    |---    |---    |
+|   Alias   | Description   |
+|---     |---    |
 |   `showdotfiles`    |   Make `*.` files visable throughout OS   |
 |   `hidedotfiles`    |   Make `*.` files hidden throughout OS   |
 |   `hidedeskicons`    |   Hide icons on desktop (good for presenting)   |
