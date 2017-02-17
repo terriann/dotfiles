@@ -1,6 +1,6 @@
 #Terri's Dotfiles
 
-This is a repository of my MacOS dotfiles.
+This is a repository of my MacOS dotfiles. Project is still a work in progress.
 
 *Files include*
 * `.profile` bash profile
@@ -17,8 +17,8 @@ Clone onto your laptop:
 
     git clone git://github.com/terriann/dotfiles.git ~/.dotfiles
 
-(Or, [fork and keep your fork
-updated](http://robots.thoughtbot.com/keeping-a-github-fork-updated)).
+(Or, [fork and keep your forked copy
+updated](https://help.github.com/articles/syncing-a-fork/)).
 
 Install the dotfiles:
 
@@ -26,23 +26,17 @@ Install the dotfiles:
 
 This command will create symlinks for config files in your home directory.
 
-* Give higher precedence to local overrides named with a .local filename
-  `~/.dotfiles/<<CONFIG>>.local`
-* Excludes repository files that not need to be symlinked
-
 Features
 -------
 *Private local settings*
-Create a .local copy of setting you don't want to publish 
+Create a .local copy of setting you don't want to publish. The configs will give higher precedence to private local settings named with a .local filename extension.
+ex. `~/.dotfiles/<<CONFIG>>.local`
 
-To Do
+My To Do List
 -------
 * Document functionality better
 _thoutbot did nicely in thier[readme.md](https://github.com/thoughtbot/dotfiles)_
-* Rescan for private info
 * Make thigs more modular
-* Push to github
-
 
 ## Resources
 Some of the resources I used and found while setting up configurations
