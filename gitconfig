@@ -9,7 +9,7 @@
 	a = add
 	aa = add --all
 	br = branch
-	ci = commit
+	ci = commit -a
 	co = checkout
 	st = status
 	unstage = reset HEAD --
