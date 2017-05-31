@@ -68,7 +68,7 @@ Shell aliases & configurations:
 
 |   Alias   |   Description     |
 |---    |---    |
-|   `sublime`    |    Open file (or current working directory) in Sublime Text 2    |
+|   `sublime`    |    Open file (or current working directory) in Sublime Text    |
 |   `phpstorm`    |    Open file (or current working directory) in PhpStorm    |
 |   `photoshop`    |    Open file (or current working directory) in Adobe Photoshop CS    |
 |   `preview`    |    Open file (or current working directory) in Preview    |
@@ -90,9 +90,9 @@ Shell aliases & configurations:
 |   Alias    | Command      | Description   |
 |---    |---    |---    |
 |   `flushdns`    |   `dscacheutil -flushcache`    |   Flush DNS    |
-|   `ip`    |   `ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\ -f2`    |   Simple IP information output    |
-|   `ip1`    |   `ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'`    |   More detailed IP information output    |
-|   `ip2`    |   `curl -s http://www.showmyip.com/simple/ | awk '{print $1}'`    |   External IP information output    |
+|   `ip`    |   `ifconfig \| grep "inet " \| grep -v 127.0.0.1 \| cut -d\ -f2`    |   Simple IP information output    |
+|   `ip1`    |   `ifconfig -a \| perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'`    |   More detailed IP information output    |
+|   `ip2`    |   `curl -s http://www.showmyip.com/simple/ \| awk '{print $1}'`    |   External IP information output    |
 
 ## Resources
 Some of the resources I used and found while setting up configurations
