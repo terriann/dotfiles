@@ -24,7 +24,7 @@ export PS1="
 $ "
 
 # Shortcuts for Common Applications
-alias sublime="open -a Sublime\ Text\ 2"
+alias sublime="open -a Sublime\ Text"
 alias phpstorm="open -a PhpStorm"
 alias photoshop="open -a Adobe\ Photoshop\ CS"
 alias preview="open -a Preview"
