@@ -36,19 +36,19 @@ ex. `~/.dotfiles/<<CONFIG>>.local`
 
 What's in it?
 -------------
-[git](http://git-scm.com/) configuration:
+
+### [git](http://git-scm.com/) configuration:
 
 * Enables git shell colors
 * Adds a `a` alias to add files to repository
 * Adds a `aa` alias to add all unstaged files to repository
 * Adds a `br` alias to branch.
-* Adds a `ci` alias to commit
+* Adds a `ci` alias to commit all changes files `git commit -a`
 
-*<Incomplete>*
 
-Shell aliases & configurations:
+### Shell aliases & configurations:
 
-*Shell Shortcuts*
+#### Shell Shortcuts
 
 |   Alias    | Command      | Description   |
 |---    |---    |---    |
@@ -62,9 +62,9 @@ Shell aliases & configurations:
 |   `reload`    |   `source ~/.bash_profile`    |   Refresh Shell    |
 |   `refresh`    |   `reload`    |    Because that part of my memory appears to be broken   |
 |   `catn`    |   `cat -n`    |   Concatenate and print content of files with line numbers    |
-|   `pubkey`    |       |   Copy public key to keyboard    |
+|   `pubkey`    |   `"more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'"`   |   Copy public key to keyboard    |
 
-*Shortcuts for Common Applications*
+#### Shortcuts for Common Applications
 
 |   Alias   |   Description     |
 |---    |---    |
@@ -76,7 +76,7 @@ Shell aliases & configurations:
 |   `safari`    |    Open file (or current working directory) in Safari    |
 |   `finder`    |    Open file (or current working directory) in Finder    |
 
-*Shortcuts for MacOS Configs and Settings*
+#### Shortcuts for MacOS Configs and Settings
 
 |   Alias   | Description   |
 |---     |---    |
@@ -85,7 +85,7 @@ Shell aliases & configurations:
 |   `hidedeskicons`    |   Hide icons on desktop (good for presenting)   |
 |   `showdeskicons`    |   Show icons on desktop   |
 
-*Networking Shortcuts*
+#### Networking Shortcuts
 
 |   Alias    | Command      | Description   |
 |---    |---    |---    |
@@ -95,7 +95,9 @@ Shell aliases & configurations:
 |   `ip2`    |   `curl -s http://www.showmyip.com/simple/ \| awk '{print $1}'`    |   External IP information output    |
 
 ## Resources
+
 Some of the resources I used and found while setting up configurations
+
 * http://blog.taylormcgann.com/2012/06/13/customize-your-shell-command-prompt/
 * https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases 
 * https://github.com/thoughtbot/dotfiles
