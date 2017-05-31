@@ -1,11 +1,12 @@
-#Terri's Dotfiles
+# Terri's Dotfiles
 
 This is a repository of my MacOS dotfiles. Project is still a work in progress.
 
-*Files include*
+### Files include
+
 * `.profile` bash profile
 * `.gitconfig` git configuration
-    * `.gitignore_global` a global git ignore
+* `.gitignore_global` a global git ignore
 
 Requirements
 ------------
@@ -28,11 +29,13 @@ This command will create symlinks for config files in your home directory.
 
 Features
 -------
-*Private local settings*
+### Private local settings
 
 Create a .local copy of setting you don't want to publish. The configs will give higher precedence to private local settings named with a .local filename extension.
 
 ex. `~/.dotfiles/<<CONFIG>>.local`
+
+Some sample local files are included, just rename the file to remove `.sample`
 
 What's in it?
 -------------
