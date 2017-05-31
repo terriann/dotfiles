@@ -62,7 +62,7 @@ What's in it?
 |   `reload`    |   `source ~/.bash_profile`    |   Refresh Shell    |
 |   `refresh`    |   `reload`    |    Because that part of my memory appears to be broken   |
 |   `catn`    |   `cat -n`    |   Concatenate and print content of files with line numbers    |
-|   `pubkey`    |   `"more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'"`   |   Copy public key to keyboard    |
+|   `pubkey`    |   `"more ~/.ssh/id_rsa.pub \| pbcopy \| printf '=> Public key copied to pasteboard.\n'"`   |   Copy public key to keyboard    |
 
 #### Shortcuts for Common Applications
 
