@@ -37,6 +37,9 @@ alias showdotfiles="defaults write com.apple.finder AppleShowAllFiles -bool true
 alias hidedotfiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 alias hidedeskicons="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdeskicons="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias unquarantine="xattr -r -d com.apple.quarantine "
+alias rmdropboxattr="xattr -r -d com.dropbox.attributes "
+alias stdchmod="find . -type d | xargs chmod 755; find . -type f | xargs chmod 644"
 
 
 ## Networking Shortcuts

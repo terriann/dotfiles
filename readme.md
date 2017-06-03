@@ -87,6 +87,9 @@ What's in it?
 |   `hidedotfiles`    |   Make `*.` files hidden throughout OS   |
 |   `hidedeskicons`    |   Hide icons on desktop (good for presenting)   |
 |   `showdeskicons`    |   Show icons on desktop   |
+|   `unquarantine`    |   Removed xattr quarantine   |
+|   `rmdropboxattr`    |   Removed xattr dropbox attributes   |
+|   `stdchmod`    |   Applies standard chmod settings for directories (755) and files (644)   |
 
 #### Networking Shortcuts
 
