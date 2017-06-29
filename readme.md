@@ -60,7 +60,7 @@ Some sample local files are included, just rename the file to remove `.sample`
 |   `ls`    |   `ls -GA`    |   Always ls in color and hide `.` and `..`    |
 |   `grep`    |   `grep --color=auto`    |    Always grep in color   |
 |   `ps`    |   `ps -ax`    |   Processes    |
-|   `reload`    |   `source ~/.bash_profile`    |   Refresh Shell    |
+|   `reload`    |   `source ~/.profile`    |   Refresh Shell and reload from ~/.profile    |
 |   `refresh`    |   `reload`    |    Because that part of my memory appears to be broken   |
 |   `catn`    |   `cat -n`    |   Concatenate and print content of files with line numbers    |
 |   `pubkey`    |   `"more ~/.ssh/id_rsa.pub \| pbcopy \| printf '=> Public key copied to pasteboard.\n'"`   |   Copy public key to keyboard    |
@@ -102,8 +102,9 @@ Some sample local files are included, just rename the file to remove `.sample`
 
 Some of the resources I used and found while setting up configurations
 
-* http://blog.taylormcgann.com/2012/06/13/customize-your-shell-command-prompt/
-* https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases 
-* https://github.com/thoughtbot/dotfiles
-* https://github.com/yanyaoer/dotfile/blob/master/runme.sh
-* https://gist.github.com/octocat/9257657
+* [Customize Your Shell & Command Prompt](http://blog.taylormcgann.com/2012/06/13/customize-your-shell-command-prompt/) - June 2012
+* [How to Make a Fancy and Useful Bash Prompt in Linux](https://www.linux.com/learn/how-make-fancy-and-useful-bash-prompt-linux) - May 2014
+* [Git Basics - Git Aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases) - Documentation
+* [Github thoughtbot/dotfiles Repo](https://github.com/thoughtbot/dotfiles)
+* [Github yanyaoer/dotfile Repo](https://github.com/yanyaoer/dotfile/blob/master/runme.sh)
+* [Gist octocat/.gitignore](https://gist.github.com/octocat/9257657)
