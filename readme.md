@@ -2,18 +2,18 @@
 
 This is a repository of my MacOS dotfiles. Project is still a work in progress.
 
-### Files include
+## Files include
 
 * `.profile` bash profile
 * `.gitconfig` git configuration
 * `.gitignore_global` a global git ignore
 
-Requirements
-------------
+## Requirements
+
 Set bash as your login shell.
 
-Install
--------
+## Install
+
 Clone onto your laptop:
 
     git clone git://github.com/terriann/dotfiles.git ~/.dotfiles
@@ -23,12 +23,12 @@ updated](https://help.github.com/articles/syncing-a-fork/)).
 
 Install the dotfiles:
 
-    bash setup.sh
+    bash ~/.dotfiles/setup.sh
 
 This command will create symlinks for config files in your home directory.
 
-Features
--------
+## Features
+
 ### Private local settings
 
 Create a .local copy of setting you don't want to publish. The configs will give higher precedence to private local settings named with a .local filename extension.
@@ -37,10 +37,9 @@ ex. `~/.dotfiles/<<CONFIG>>.local`
 
 Some sample local files are included, just rename the file to remove `.sample`
 
-What's in it?
--------------
+## What's inside
 
-### [git](http://git-scm.com/) configuration:
+### [git](http://git-scm.com/) configuration
 
 * Enables git shell colors
 * Adds a `a` alias to add files to repository
@@ -48,8 +47,7 @@ What's in it?
 * Adds a `br` alias to branch.
 * Adds a `ci` alias to commit all changes files `git commit -a`
 
-
-### Shell aliases & configurations:
+### Shell aliases & configurations
 
 #### Shell Shortcuts
 
