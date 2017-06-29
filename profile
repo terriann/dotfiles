@@ -14,7 +14,7 @@ alias ps="ps -ax"
 alias catn="cat -n"
 
 # Utility Mini-scripts
-alias bash-reload="source ~/.bash_profile && printf '=> Bash profile reset.\n'"
+alias bash-reload="source ~/.profile && printf '=> Bash profile reset.\n'"
 alias bash-clear-history="cat /dev/null > ~/.bash_history && history -c && exit"
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy && printf '=> Public key copied to pasteboard.\n'"
 
