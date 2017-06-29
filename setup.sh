@@ -16,5 +16,11 @@ link() {
     fi
 }
 
+touch ~/.dotfiles/gitconfig.local
+touch ~/.dotfiles/profile.local
+
 link "gitconfig"
 link "profile"
+
+source ~/.profile
+printf '=> Bash profile reset.\n'
