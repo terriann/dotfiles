@@ -12,11 +12,9 @@
 
 link() {
     if [ ! -h $HOME/.$1 ]; then
-       ln -s "`pwd`/$1" "$HOME/.$1"
+       ln -s "$HOME/.dotfiles/$1" "$HOME/.$1"
     fi
 }
 
 link "gitconfig"
-link "gitconfig.local"
 link "profile"
-link "profile.local"
