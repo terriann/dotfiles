@@ -47,6 +47,7 @@ Some sample local files are included, just rename the file to remove `.sample`
 
 | Alias   |  Command     |  Description                                             |
 |---------|--------------|----------------------------------------------------------|
+| `aliases`     |  `git aliases`     |  Displays all availiable aliases         |
 | `a`     |  `git a`     |  add files to repository                        |
 | `aa`    |  `git aa`    |  add all unstaged files to repository           |
 | `br`    |  `git br`    |  branch                                        |
