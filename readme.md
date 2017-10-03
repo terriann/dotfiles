@@ -39,15 +39,25 @@ Some sample local files are included, just rename the file to remove `.sample`
 
 ## What's inside
 
-### [git](http://git-scm.com/) configuration
+### [git](http://git-scm.com/) Configuration
 
 * Enables git shell colors
-* Adds a `a` alias to add files to repository
-* Adds a `aa` alias to add all unstaged files to repository
-* Adds a `br` alias to branch.
-* Adds a `ci` alias to commit all changes files `git commit -a`
 
-### Shell aliases & configurations
+#### Git Shortcuts
+
+| Alias   |  Command     |  Description                                             |
+|---------|--------------|----------------------------------------------------------|
+| `a`     |  `git a`     |  add files to repository                        |
+| `aa`    |  `git aa`    |  add all unstaged files to repository           |
+| `br`    |  `git br`    |  branch                                        |
+| `ci`    |  `git ci`    |  commit all changes files `git commit -a`       |
+| `co`    |  `git co`    |  chechout                                   |
+| `st`    |  `git st`    |  status                                   |
+| `unstage`    |  `git unstage`    |  Unstage changes `reset HEAD --`                 |
+| `last`    |  `git last`    |  View last commit to branch                 |
+| `graph` |  `git graph` |  display a graph view of the recent git history |
+
+### Shell Aliases & Configurations
 
 #### Shell Shortcuts
 
@@ -107,4 +117,7 @@ Some of the resources I used and found while setting up configurations
 * [Git Basics - Git Aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases) - Documentation
 * [Github thoughtbot/dotfiles Repo](https://github.com/thoughtbot/dotfiles)
 * [Github yanyaoer/dotfile Repo](https://github.com/yanyaoer/dotfile/blob/master/runme.sh)
+* [Github holman/dotfile Repo](https://github.com/holman/dotfiles)
+* [Github ymendel/dotfile Repo](https://github.com/ymendel/dotfiles)
 * [Gist octocat/.gitignore](https://gist.github.com/octocat/9257657)
+* [7 Git Hacks](https://medium.freecodecamp.org/7-git-hacks-you-just-can-t-ignore-41aea137727a)
