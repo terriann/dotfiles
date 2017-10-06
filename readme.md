@@ -47,16 +47,18 @@ Some sample local files are included, just rename the file to remove `.sample`
 
 | Alias   |  Command     |  Description                                             |
 |---------|--------------|----------------------------------------------------------|
-| `aliases`     |  `git aliases`     |  Displays all availiable aliases         |
 | `a`     |  `git a`     |  add files to repository                        |
 | `aa`    |  `git aa`    |  add all unstaged files to repository           |
+| `aliases`     |  `git aliases`     |  Displays all availiable aliases         |
+| `amend`    |  `git amend`    |  Amend your last commit with new message or additional satged changes           |
 | `br`    |  `git br`    |  branch                                        |
 | `ci`    |  `git ci`    |  commit all changes files `git commit -a`       |
 | `co`    |  `git co`    |  chechout                                   |
-| `st`    |  `git st`    |  status                                   |
-| `unstage`    |  `git unstage`    |  Unstage changes `reset HEAD --`                 |
-| `last`    |  `git last`    |  View last commit to branch                 |
 | `graph` |  `git graph` |  display a graph view of the recent git history |
+| `last`    |  `git last`    |  View last commit to branch                 |
+| `lg`    |  `git lg`    |  log that shows relative dates and files changed                                   |
+| `st`    |  `git st`    |  status                                   |
+| `unstage`    |  `git unstage`    |  Unstage changes `reset HEAD --`         |
 
 ### Shell Aliases & Configurations
 
