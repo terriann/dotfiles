@@ -40,3 +40,12 @@ Thumbs.db
 #################
 .idea
 *.sublime-*
+
+# Ignore files that are backups ot temp files #
+###############################################
+\~*
+*.backup
+*.bak
+*.orig
+*.temp
+*.tmp
