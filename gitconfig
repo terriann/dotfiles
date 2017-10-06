@@ -10,15 +10,18 @@
 	ui = true
 [alias]
 	a = add
-	aliases = !git config --list | grep 'alias.' | sed 's/^alias.//' | sed 's/=/ => /'
 	aa = add --all
+	aliases = !git config --list | grep 'alias.' | sed 's/^alias.//' | sed 's/=/ => /'
+	amend = commit --amend
 	br = branch
 	ci = commit -a
 	co = checkout
-	st = status
-	unstage = reset HEAD --
-	last = log -1 HEAD
 	graph = log --graph --pretty=format:'%C(yellow)%h%C(reset) -%C(cyan)%d%C(reset) %s %Cgreen(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --date=relative
+	last = log -1 HEAD
+	lg = log --stat --relative-date
+	st = status
+	reset = checkout --
+	unstage = reset HEAD --
 [include]
   path = ~/.dotfiles/gitconfig.local
 [apply]
