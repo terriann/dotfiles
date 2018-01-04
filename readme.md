@@ -125,3 +125,4 @@ Some of the resources I used and found while setting up configurations
 * [Github ymendel/dotfile Repo](https://github.com/ymendel/dotfiles)
 * [Gist octocat/.gitignore](https://gist.github.com/octocat/9257657)
 * [7 Git Hacks](https://medium.freecodecamp.org/7-git-hacks-you-just-can-t-ignore-41aea137727a)
+* [Github bear/bear](https://github.com/bear/bear) - dotfiles, tools, notes and and config scripts
