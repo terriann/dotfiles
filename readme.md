@@ -128,6 +128,13 @@ These are the commands tht trigger a couple commands to yield a specific result.
 |   `ip1`    |   `ifconfig -a \| perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'`    |   More detailed IP information output    |
 |   `ip2`    |   `curl -s http://www.showmyip.com/simple/ \| awk '{print $1}'`    |   External IP information output    |
 
+## Troubleshooting
+
+**Getting a prompt for Github username and password but I setup key:**
+
+Check this article to test your connection and authorize the key:  
+[Testing your SSH connection](https://help.github.com/articles/testing-your-ssh-connection/)
+
 ## Resources
 
 Some of the resources I used and found while setting up configurations
