@@ -42,7 +42,7 @@ Thumbs.db
 *.sublime-*
 .vscode
 
-# Ignore files that are backups ot temp files #
+# Ignore files that are backups or temp files #
 ###############################################
 \~*
 *.backup

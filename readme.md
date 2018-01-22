@@ -25,6 +25,10 @@ Install the dotfiles:
 
     bash ~/.dotfiles/setup.sh
 
+If using the base Homebrew setup also run this script:
+
+    bash ~/.dotfiles/setup/homebrew.sh
+
 This command will create symlinks for config files in your home directory.
 
 ## Features
@@ -37,7 +41,16 @@ ex. `~/.dotfiles/<<CONFIG>>.local`
 
 Some sample local files are included, just rename the file to remove `.sample`
 
-## What's inside
+### Homebrew starter
+
+A setup file `/setup/homebrew.sh` will do a prelimiary Homebrew setup. It includes Git, Node, Ruby and the `tree` command.
+
+
+### WordPress CLI Autocomplete Support
+
+The WordPress autocomplete script is included in your profile, support requires the CP-CLI command `wp` can run correctly in the acive environment.
+
+## What's Inside
 
 ### [git](http://git-scm.com/) Configuration
 
@@ -74,10 +87,18 @@ Some sample local files are included, just rename the file to remove `.sample`
 |   `ls`    |   `ls -GA`    |   Always ls in color and hide `.` and `..`    |
 |   `grep`    |   `grep --color=auto`    |    Always grep in color   |
 |   `ps`    |   `ps -ax`    |   Processes    |
-|   `reload`    |   `source ~/.profile`    |   Refresh Shell and reload from ~/.profile    |
-|   `refresh`    |   `reload`    |    Because that part of my memory appears to be broken   |
 |   `catn`    |   `cat -n`    |   Concatenate and print content of files with line numbers    |
-|   `pubkey`    |   `"more ~/.ssh/id_rsa.pub \| pbcopy \| printf '=> Public key copied to pasteboard.\n'"`   |   Copy public key to keyboard    |
+
+# Utility Mini-scripts
+
+These are the commands tht trigger a couple commands to yield a specific result.
+
+|   Alias   |   Description     |
+|---    |---    |
+|   `bash-reload`    |   `source ~/.profile && printf '=> Bash profile reset.\n'`    |   Refresh Shell and reload from ~/.profile with visual confirmation    |
+|   `bash-clear-history`    |   `cat /dev/null > ~/.bash_history && history -c && exit`    |   Clears bash history    |
+|   `pubkey`    |   Copy public key to keyboard    |
+|   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vunerable packages.    |
 
 #### Shortcuts for Common Applications
 
@@ -112,6 +133,13 @@ Some sample local files are included, just rename the file to remove `.sample`
 |   `ip1`    |   `ifconfig -a \| perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'`    |   More detailed IP information output    |
 |   `ip2`    |   `curl -s http://www.showmyip.com/simple/ \| awk '{print $1}'`    |   External IP information output    |
 
+## Troubleshooting
+
+**Getting a prompt for Github username and password but I setup key:**
+
+Check this article to test your connection and authorize the key:  
+[Testing your SSH connection](https://help.github.com/articles/testing-your-ssh-connection/)
+
 ## Resources
 
 Some of the resources I used and found while setting up configurations
@@ -126,3 +154,7 @@ Some of the resources I used and found while setting up configurations
 * [Gist octocat/.gitignore](https://gist.github.com/octocat/9257657)
 * [7 Git Hacks](https://medium.freecodecamp.org/7-git-hacks-you-just-can-t-ignore-41aea137727a)
 * [Github bear/bear](https://github.com/bear/bear) - dotfiles, tools, notes and and config scripts
+
+### Homebrew
+
+* [How to and Best of Homebrew - gist indiesquidge/homebrew.md](https://gist.github.com/indiesquidge/ec010eca3ffa254788c2)
