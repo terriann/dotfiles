@@ -45,6 +45,11 @@ Some sample local files are included, just rename the file to remove `.sample`
 
 A setup file `/setup/homebrew.sh` will do a prelimiary Homebrew setup. It includes Git, Node, Ruby and the `tree` command.
 
+
+### WordPress CLI Autocomplete Support
+
+The WordPress autocomplete script is included in your profile, support requires the CP-CLI command `wp` can run correctly in the acive environment.
+
 ## What's Inside
 
 ### [git](http://git-scm.com/) Configuration
@@ -148,11 +153,8 @@ Some of the resources I used and found while setting up configurations
 * [Github ymendel/dotfile Repo](https://github.com/ymendel/dotfiles)
 * [Gist octocat/.gitignore](https://gist.github.com/octocat/9257657)
 * [7 Git Hacks](https://medium.freecodecamp.org/7-git-hacks-you-just-can-t-ignore-41aea137727a)
-<<<<<<< HEAD
+* [Github bear/bear](https://github.com/bear/bear) - dotfiles, tools, notes and and config scripts
 
 ### Homebrew
 
 * [How to and Best of Homebrew - gist indiesquidge/homebrew.md](https://gist.github.com/indiesquidge/ec010eca3ffa254788c2)
-=======
-* [Github bear/bear](https://github.com/bear/bear) - dotfiles, tools, notes and and config scripts
->>>>>>> master
