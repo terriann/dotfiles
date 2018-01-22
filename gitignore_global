@@ -41,3 +41,12 @@ Thumbs.db
 .idea
 *.sublime-*
 .vscode
+
+# Ignore files that are backups or temp files #
+###############################################
+\~*
+*.backup
+*.bak
+*.orig
+*.temp
+*.tmp
