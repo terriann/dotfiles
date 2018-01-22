@@ -74,10 +74,17 @@ Some sample local files are included, just rename the file to remove `.sample`
 |   `ls`    |   `ls -GA`    |   Always ls in color and hide `.` and `..`    |
 |   `grep`    |   `grep --color=auto`    |    Always grep in color   |
 |   `ps`    |   `ps -ax`    |   Processes    |
-|   `reload`    |   `source ~/.profile`    |   Refresh Shell and reload from ~/.profile    |
-|   `refresh`    |   `reload`    |    Because that part of my memory appears to be broken   |
 |   `catn`    |   `cat -n`    |   Concatenate and print content of files with line numbers    |
-|   `pubkey`    |   `"more ~/.ssh/id_rsa.pub \| pbcopy \| printf '=> Public key copied to pasteboard.\n'"`   |   Copy public key to keyboard    |
+
+# Utility Mini-scripts
+
+These are the commands tht trigger a couple commands to yield a specific result.
+
+|   Alias   |   Description     |
+|---    |---    |
+|   `bash-reload`    |   `source ~/.profile && printf '=> Bash profile reset.\n'`    |   Refresh Shell and reload from ~/.profile with visual confirmation    |
+|   `bash-clear-history`    |   `cat /dev/null > ~/.bash_history && history -c && exit`    |   Clears bash history    |
+|   `pubkey`    |   Copy public key to keyboard    |
 
 #### Shortcuts for Common Applications
 
