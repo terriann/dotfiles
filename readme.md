@@ -25,6 +25,10 @@ Install the dotfiles:
 
     bash ~/.dotfiles/setup.sh
 
+If using the base Homebrew setup also run this script:
+
+    bash ~/.dotfiles/setup/homebrew.sh
+
 This command will create symlinks for config files in your home directory.
 
 ## Features
@@ -37,7 +41,11 @@ ex. `~/.dotfiles/<<CONFIG>>.local`
 
 Some sample local files are included, just rename the file to remove `.sample`
 
-## What's inside
+### Homebrew starter
+
+A setup file `/setup/homebrew.sh` will do a prelimiary Homebrew setup. It includes Git, Node, Ruby and the `tree` command.
+
+## What's Inside
 
 ### [git](http://git-scm.com/) Configuration
 
@@ -85,6 +93,7 @@ These are the commands tht trigger a couple commands to yield a specific result.
 |   `bash-reload`    |   `source ~/.profile && printf '=> Bash profile reset.\n'`    |   Refresh Shell and reload from ~/.profile with visual confirmation    |
 |   `bash-clear-history`    |   `cat /dev/null > ~/.bash_history && history -c && exit`    |   Clears bash history    |
 |   `pubkey`    |   Copy public key to keyboard    |
+|   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vunerable packages.    |
 
 #### Shortcuts for Common Applications
 
@@ -132,3 +141,7 @@ Some of the resources I used and found while setting up configurations
 * [Github ymendel/dotfile Repo](https://github.com/ymendel/dotfiles)
 * [Gist octocat/.gitignore](https://gist.github.com/octocat/9257657)
 * [7 Git Hacks](https://medium.freecodecamp.org/7-git-hacks-you-just-can-t-ignore-41aea137727a)
+
+### Homebrew
+
+* [How to and Best of Homebrew - gist indiesquidge/homebrew.md](https://gist.github.com/indiesquidge/ec010eca3ffa254788c2)
