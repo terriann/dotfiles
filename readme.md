@@ -58,6 +58,8 @@ Then add the efollowing to your `profile.local` file.
 
     alias wp='php /Applications/MAMP/bin/php/${PHP_VERSION}/bin/wp-cli.phar'
 
+Thanks to [Installing WP-CLI with MAMP - Tom McFarlin](https://tommcfarlin.com/installing-wp-cli-with-mamp/)!
+
 #### WordPress CLI Autocomplete Support
 
 The WordPress autocomplete script can be added byt including the following in your `profile.local` file.
