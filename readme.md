@@ -45,10 +45,26 @@ Some sample local files are included, just rename the file to remove `.sample`
 
 A setup file `/setup/homebrew.sh` will do a prelimiary Homebrew setup. It includes Git, Node, Ruby and the `tree` command.
 
+## Extended Suggestions
 
-### WordPress CLI Autocomplete Support
+### WordPress CLI Support
 
-The WordPress autocomplete script is included in your profile, support requires the CP-CLI command `wp` can run correctly in the acive environment.
+WordPress CLI can be aliased if installed using the MAMP like this:
+
+    cd /Applications/MAMP/bin/php/${PHP_VERSION}/bin
+    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+Then add the efollowing to your `profile.local` file.
+
+    alias wp='php /Applications/MAMP/bin/php/${PHP_VERSION}/bin/wp-cli.phar'
+
+#### WordPress CLI Autocomplete Support
+
+The WordPress autocomplete script can be added byt including the following in your `profile.local` file.
+
+    # WordPress Resources
+    # Include WP-CLI tab completion. @link http://wp-cli.org/
+    source ~/.dotfiles/includes/wp-completion.bash
 
 ## What's Inside
 
