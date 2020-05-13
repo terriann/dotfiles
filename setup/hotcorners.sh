@@ -1,5 +1,16 @@
 #!/bin/bash
 
+
+#This looks promising:
+
+#    defaults read com.apple.dock
+
+#This resource might be helpful too
+#https://www.jamf.com/jamf-nation/discussions/19686/set-hot-corners-with-configuration-profile
+
+#https://gist.github.com/klynch/827581
+
+
 defaults write com.apple.dock wvous-tl-corner -int 0
 
 defaults write com.apple.dock wvous-tr-corner -int 0
