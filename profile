@@ -1,3 +1,9 @@
+# Prevent duplicates when hitting the up arrow in the shell
+setopt HIST_IGNORE_DUPS
+
+# set the editor for SVN
+export SVN_EDITOR=/usr/bin/vi
+
 # Server related Aliases
 alias phpmamp="/Applications/MAMP/bin/php/php5.4.10/bin/php"
 alias composer="php /usr/local/bin/composer.phar"
@@ -22,10 +28,16 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy && printf '=> Public key copied to
 # Customize Bash Prompt
 ## Add display when in an ssh session
 if [ -n "$SSH_CLIENT" ]; then text=" ssh-session"; fi
-## Formatting the command prompt
-export PS1="
-\[\033[1;35m\]\u\[\033[0m\]:\[\033[1;36m\]\W\[\033[1;32m\]${text}
-\[\033[0;37m\]$ "
+
+## Bash command prompt
+#export PS1="
+#\[\033[1;35m\]\u\[\033[0m\]:\[\033[1;36m\]\W\[\033[1;32m\]${text}
+#\[\033[0;37m\]$ "
+
+## ZSH command prompt
+export PROMPT='
+%F{magenta}%n%f:%F{cyan}%m%f %B%F{240}%~%f%b
+%(?.%F{green}√.%F{red}?%?)%f $ '
 
 # Shortcuts for Common Applications
 alias sublime="open -a Sublime\ Text"

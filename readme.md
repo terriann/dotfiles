@@ -1,4 +1,26 @@
 # Terri's Dotfiles
+- [Terri's Dotfiles](#terris-dotfiles)
+	- [Files include](#files-include)
+	- [Requirements](#requirements)
+	- [Install](#install)
+		- [ZSH Conversion](#zsh-conversion)
+	- [Features](#features)
+		- [Private local settings](#private-local-settings)
+		- [Homebrew starter](#homebrew-starter)
+		- [WordPress CLI Autocomplete Support](#wordpress-cli-autocomplete-support)
+	- [What's Inside](#whats-inside)
+		- [git Configuration](#git-configuration)
+			- [Git Shortcuts](#git-shortcuts)
+		- [Shell Aliases & Configurations](#shell-aliases--configurations)
+			- [Shell Shortcuts](#shell-shortcuts)
+- [Utility Mini-scripts](#utility-mini-scripts)
+			- [Shortcuts for Common Applications](#shortcuts-for-common-applications)
+			- [Shortcuts for MacOS Configs and Settings](#shortcuts-for-macos-configs-and-settings)
+			- [Networking Shortcuts](#networking-shortcuts)
+	- [Troubleshooting](#troubleshooting)
+	- [Changelog](#changelog)
+	- [Resources](#resources)
+		- [Homebrew](#homebrew)
 
 This is a repository of my MacOS dotfiles. Project is still a work in progress.
 
@@ -30,6 +52,16 @@ If using the base Homebrew setup also run this script:
     bash ~/.dotfiles/setup/homebrew.sh
 
 This command will create symlinks for config files in your home directory.
+
+You will need to restart your terminal inorder to make use of the changes.
+
+### ZSH Conversion
+
+You may need to add the following line to your `~/.zshrc` inorder for the aliases and settings to apply.
+
+	[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+
+This was present in the `~/.bash_profile` previously.
 
 ## Features
 
@@ -140,6 +172,10 @@ These are the commands tht trigger a couple commands to yield a specific result.
 Check this article to test your connection and authorize the key:  
 [Testing your SSH connection](https://help.github.com/articles/testing-your-ssh-connection/)
 
+## Changelog
+
+
+
 ## Resources
 
 Some of the resources I used and found while setting up configurations
@@ -158,3 +194,4 @@ Some of the resources I used and found while setting up configurations
 ### Homebrew
 
 * [How to and Best of Homebrew - gist indiesquidge/homebrew.md](https://gist.github.com/indiesquidge/ec010eca3ffa254788c2)
+* [Install most of my Apps with homebrew & cask](https://gist.github.com/t-io/8255711)
