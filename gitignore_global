@@ -50,3 +50,7 @@ Thumbs.db
 *.orig
 *.temp
 *.tmp
+
+# Ignore tests that are works in progress #
+###########################################
+*test.js.broken
