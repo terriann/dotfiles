@@ -89,7 +89,7 @@ The WordPress autocomplete script is included in your profile, support requires 
 |   `ps`    |   `ps -ax`    |   Processes    |
 |   `catn`    |   `cat -n`    |   Concatenate and print content of files with line numbers    |
 
-# Utility Mini-scripts
+#### Utility Mini-scripts
 
 These are the commands tht trigger a couple commands to yield a specific result.
 
@@ -99,6 +99,7 @@ These are the commands tht trigger a couple commands to yield a specific result.
 |   `bash-clear-history`    |   `cat /dev/null > ~/.bash_history && history -c && exit`    |   Clears bash history    |
 |   `pubkey`    |   Copy public key to keyboard    |
 |   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vunerable packages.    |
+|   `eject-all`    |   Eject all devices    |
 
 #### Shortcuts for Common Applications
 
