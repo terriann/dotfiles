@@ -6,13 +6,11 @@
 # @Todo add /backup dir to git ignore
 # cp .* to the above dir
 
-
-
 # 2. Make symlinks
 
 link() {
     if [ ! -h $HOME/.$1 ]; then
-       ln -s "$HOME/.dotfiles/$1" "$HOME/.$1"
+        ln -s "$HOME/.dotfiles/$1" "$HOME/.$1"
     fi
 }
 
@@ -21,6 +19,7 @@ touch ~/.dotfiles/profile.local
 
 link "gitconfig"
 link "profile"
+link "inputrc"
 
 source ~/.profile
 printf '=> Bash profile reset.\n'

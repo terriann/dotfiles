@@ -1,0 +1,2 @@
+# Case insensitive auto complete
+set completion-ignore-case on
