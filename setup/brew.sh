@@ -6,11 +6,8 @@
 # Install git
 brew install git
 
-# install ruby
-brew install ruby
-
-# install node
-brew install node
+# install exiftool
+brew install exiftool
 
 # install tree command
 brew install tree
