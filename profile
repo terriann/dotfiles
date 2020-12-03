@@ -1,6 +1,14 @@
+# Prevent duplicates when hitting the up arrow in the shell
+setopt HIST_IGNORE_DUPS
+
+# set the editor for SVN
+export SVN_EDITOR=/usr/bin/vi
+
 # Server related Aliases
 alias phpmamp="/Applications/MAMP/bin/php/php5.4.10/bin/php"
 alias composer="php /usr/local/bin/composer.phar"
+# Include composer to run phpcs and other Composer libraries globally
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # Shell Shortcuts
 alias ..="cd ../"
@@ -23,14 +31,22 @@ alias eject-all="diskutil eject /Volumes/*;diskutil unmountDisk /Volumes/*"
 # Customize Bash Prompt
 ## Add display when in an ssh session
 if [ -n "$SSH_CLIENT" ]; then text=" ssh-session"; fi
-## Formatting the command prompt
-export PS1="
-\[\033[1;35m\]\u\[\033[0m\]:\[\033[1;36m\]\W\[\033[1;32m\]${text}
-\[\033[0;37m\]$ "
+
+## Bash command prompt
+#export PS1="
+#\[\033[1;35m\]\u\[\033[0m\]:\[\033[1;36m\]\W\[\033[1;32m\]${text}
+#\[\033[0;37m\]$ "
+
+## ZSH command prompt
+export PROMPT='
+%F{magenta}%n%f:%F{cyan}%m%f %B%F{240}%~%f%b
+%(?.%F{green}√.%F{red}?%?)%f $ '
 
 # Shortcuts for Common Applications
 alias sublime="open -a Sublime\ Text"
-alias code="open -a Visual\ Studio\ Code"
+# Removing in favor of app supported shell command
+# @link https://code.visualstudio.com/docs/setup/mac
+#alias code="open -a Visual\ Studio\ Code"
 alias phpstorm="open -a PhpStorm"
 alias photoshop="open -a Adobe\ Photoshop\ CS"
 alias preview="open -a Preview"
