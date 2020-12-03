@@ -26,6 +26,7 @@ alias bash-reload="source ~/.profile && printf '=> Bash profile reset.\n'"
 alias bash-clear-history="cat /dev/null > ~/.bash_history && history -c && exit"
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy && printf '=> Public key copied to pasteboard.\n'"
+alias eject-all="diskutil eject /Volumes/*;diskutil unmountDisk /Volumes/*"
 
 # Customize Bash Prompt
 ## Add display when in an ssh session

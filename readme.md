@@ -121,7 +121,7 @@ The WordPress autocomplete script is included in your profile, support requires 
 |   `ps`    |   `ps -ax`    |   Processes    |
 |   `catn`    |   `cat -n`    |   Concatenate and print content of files with line numbers    |
 
-# Utility Mini-scripts
+#### Utility Mini-scripts
 
 These are the commands tht trigger a couple commands to yield a specific result.
 
@@ -131,6 +131,7 @@ These are the commands tht trigger a couple commands to yield a specific result.
 |   `bash-clear-history`    |   `cat /dev/null > ~/.bash_history && history -c && exit`    |   Clears bash history    |
 |   `pubkey`    |   Copy public key to keyboard    |
 |   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vunerable packages.    |
+|   `eject-all`    |   Eject all devices    |
 
 #### Shortcuts for Common Applications
 
@@ -195,3 +196,8 @@ Some of the resources I used and found while setting up configurations
 
 * [How to and Best of Homebrew - gist indiesquidge/homebrew.md](https://gist.github.com/indiesquidge/ec010eca3ffa254788c2)
 * [Install most of my Apps with homebrew & cask](https://gist.github.com/t-io/8255711)
+
+### Bash, Shell & Terminal Resources
+
+* [How can I list and edit all defined aliases in Terminal? - stackoverflow](https://apple.stackexchange.com/questions/25352/how-can-i-list-and-edit-all-defined-aliases-in-terminal) - good for when you've taken your configuration too far down the rabbit hole and months later need to crawl back out.
+* [The macOS School of Terminal Witchcraft and Wizardry - Armin Briegel](https://www.youtube.com/watch?v=GMqj90jDCbE) - Excellent presentation with LOADS of Terminal efficiency tips. Definitly worth a rewatch
