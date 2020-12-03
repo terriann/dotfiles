@@ -7,6 +7,8 @@ export SVN_EDITOR=/usr/bin/vi
 # Server related Aliases
 alias phpmamp="/Applications/MAMP/bin/php/php5.4.10/bin/php"
 alias composer="php /usr/local/bin/composer.phar"
+# Include composer to run phpcs and other Composer libraries globally
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # Shell Shortcuts
 alias ..="cd ../"
