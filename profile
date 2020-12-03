@@ -43,7 +43,9 @@ export PROMPT='
 
 # Shortcuts for Common Applications
 alias sublime="open -a Sublime\ Text"
-alias code="open -a Visual\ Studio\ Code"
+# Removing in favor of app supported shell command
+# @link https://code.visualstudio.com/docs/setup/mac
+#alias code="open -a Visual\ Studio\ Code"
 alias phpstorm="open -a PhpStorm"
 alias photoshop="open -a Adobe\ Photoshop\ CS"
 alias preview="open -a Preview"
