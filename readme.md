@@ -13,7 +13,7 @@
 			- [Git Shortcuts](#git-shortcuts)
 		- [Shell Aliases & Configurations](#shell-aliases--configurations)
 			- [Shell Shortcuts](#shell-shortcuts)
-- [Utility Mini-scripts](#utility-mini-scripts)
+			- [Utility Mini-scripts](#utility-mini-scripts)
 			- [Shortcuts for Common Applications](#shortcuts-for-common-applications)
 			- [Shortcuts for MacOS Configs and Settings](#shortcuts-for-macos-configs-and-settings)
 			- [Networking Shortcuts](#networking-shortcuts)
@@ -21,6 +21,7 @@
 	- [Changelog](#changelog)
 	- [Resources](#resources)
 		- [Homebrew](#homebrew)
+		- [Bash, Shell & Terminal Resources](#bash-shell--terminal-resources)
 
 This is a repository of my MacOS dotfiles. Project is still a work in progress.
 
@@ -144,6 +145,7 @@ These are the commands tht trigger a couple commands to yield a specific result.
 |   `chrome`    |    Open file (or current working directory) in Google Chrome    |
 |   `safari`    |    Open file (or current working directory) in Safari    |
 |   `finder`    |    Open file (or current working directory) in Finder    |
+|   `code`      |    Use methodolog built into app. See https://code.visualstudio.com/docs/setup/mac     |
 
 #### Shortcuts for MacOS Configs and Settings
 

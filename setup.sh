@@ -19,7 +19,7 @@ touch ~/.dotfiles/profile.local
 
 link "gitconfig"
 link "profile"
-link "inputrc"
+link "zshrc"
 
 source ~/.profile
-printf '=> Bash profile reset.\n'
+printf '=> Profile reset.\n'

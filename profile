@@ -1,11 +1,7 @@
-# Prevent duplicates when hitting the up arrow in the shell
-setopt HIST_IGNORE_DUPS
-
 # set the editor for SVN
 export SVN_EDITOR=/usr/bin/vi
 
 # Server related Aliases
-alias phpmamp="/Applications/MAMP/bin/php/php5.4.10/bin/php"
 alias composer="php /usr/local/bin/composer.phar"
 # Include composer to run phpcs and other Composer libraries globally
 export PATH="$PATH:$HOME/.composer/vendor/bin"
@@ -22,7 +18,8 @@ alias ps="ps -ax"
 alias catn="cat -n"
 
 # Utility Mini-scripts
-alias bash-reload="source ~/.profile && printf '=> Bash profile reset.\n'"
+alias bash-reload="source ~/.profile && printf '=> Profile reset.\n'"
+alias terminal-reload="source ~/.profile && printf '=> Profile reset.\n'"
 alias bash-clear-history="cat /dev/null > ~/.bash_history && history -c && exit"
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy && printf '=> Public key copied to pasteboard.\n'"
@@ -68,11 +65,6 @@ alias flushdns="dscacheutil -flushcache"
 alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\ -f2'
 alias ip1="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias ip2="curl -s http://www.showmyip.com/simple/ | awk '{print $1}'"
-
-## WordPress Resources
-### Include WP-CLI tab completion.
-### @link http://wp-cli.org/
-source ~/.dotfiles/includes/wp-completion.bash
 
 # Load local settings/overrides
 source ~/.dotfiles/profile.local
