@@ -68,3 +68,6 @@ alias ip2="curl -s http://www.showmyip.com/simple/ | awk '{print $1}'"
 
 # Load local settings/overrides
 source ~/.dotfiles/profile.local
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
