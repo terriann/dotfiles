@@ -33,7 +33,7 @@ This is a repository of my MacOS dotfiles. Project is still a work in progress.
 
 ## Requirements
 
-Set bash as your login shell.
+Set zsh as your login shell.
 
 ## Install
 
@@ -76,12 +76,13 @@ Some sample local files are included, just rename the file to remove `.sample`
 
 ### Homebrew starter
 
-A setup file `/setup/homebrew.sh` will do a prelimiary Homebrew setup. It includes Git, Node, Ruby and the `tree` command.
-
+A setup file `/setup/homebrew.sh` will do a prelimiary Homebrew setup. It includes Git, Ruby and the `tree` command.
 
 ### WordPress CLI Autocomplete Support
 
 The WordPress autocomplete script is included in your profile, support requires the CP-CLI command `wp` can run correctly in the acive environment.
+
+Currently unsupported.
 
 ## What's Inside
 
@@ -139,10 +140,10 @@ These are the commands tht trigger a couple commands to yield a specific result.
 |   Alias   |   Description     |
 |---    |---    |
 |   `sublime`    |    Open file (or current working directory) in Sublime Text    |
-|   `phpstorm`    |    Open file (or current working directory) in PhpStorm    |
 |   `photoshop`    |    Open file (or current working directory) in Adobe Photoshop CS    |
 |   `preview`    |    Open file (or current working directory) in Preview    |
 |   `chrome`    |    Open file (or current working directory) in Google Chrome    |
+|   `brave `    |    Open file (or current working directory) in Brave Browser    |
 |   `safari`    |    Open file (or current working directory) in Safari    |
 |   `finder`    |    Open file (or current working directory) in Finder    |
 |   `code`      |    Use methodolog built into app. See https://code.visualstudio.com/docs/setup/mac     |
