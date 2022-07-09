@@ -49,10 +49,10 @@ alias sublime="open -a Sublime\ Text"
 # Removing in favor of app supported shell command
 # @link https://code.visualstudio.com/docs/setup/mac
 #alias code="open -a Visual\ Studio\ Code"
-alias phpstorm="open -a PhpStorm"
 alias photoshop="open -a Adobe\ Photoshop\ CS"
 alias preview="open -a Preview"
 alias chrome="open -a Google\ Chrome"
+alias brave="open -a Brave\ Browser"
 alias safari="open -a Safari"
 alias finder="open ."
 alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfiles/"
@@ -77,5 +77,6 @@ alias ip2="curl -s http://www.showmyip.com/simple/ | awk '{print $1}'"
 # Load local settings/overrides
 source ~/.dotfiles/profile.local
 
+# Load NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 

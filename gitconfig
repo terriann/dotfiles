@@ -28,6 +28,8 @@
    whitespace = nowarn
 [mergetool]
   keepBackup = false
+[pull]
+  rebase = false
 [help]
 	autocorrect = 1
 [filter "lfs"]
