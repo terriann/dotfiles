@@ -18,7 +18,7 @@ alias ps="ps -ax"
 alias catn="cat -n"
 
 # Utility Mini-scripts
-alias bash-reload="source ~/.profile && printf '=> Profile reset.\n'"
+alias bash-reload="source ~/.profile && printf '=> Terminal profile reset.\n'"
 alias terminal-reload="source ~/.profile && printf '=> Profile reset.\n'"
 alias bash-clear-history="cat /dev/null > ~/.bash_history && history -c && exit"
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
@@ -37,7 +37,12 @@ if [ -n "$SSH_CLIENT" ]; then text=" ssh-session"; fi
 ## ZSH command prompt
 export PROMPT='
 %F{magenta}%n%f:%F{cyan}%m%f %B%F{240}%~%f%b
-%(?.%F{green}√.%F{red}?%?)%f $ '
+%(?.%F{green}√.%F{red}X)%f $ '
+
+# Date time in the right of the prompt
+# @link https://gist.github.com/zulhfreelancer/9c410cad5efa9c5f7c74cd0849765865
+# @todo - Make UTC instead of local. Accepting PRs
+export RPROMPT="%F{yellow}[ %D{%f-%m-%y} %D{%L:%M:%S} ]"
 
 # Shortcuts for Common Applications
 alias sublime="open -a Sublime\ Text"
@@ -50,6 +55,7 @@ alias preview="open -a Preview"
 alias chrome="open -a Google\ Chrome"
 alias safari="open -a Safari"
 alias finder="open ."
+alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfiles/"
 
 # MacOS related Aliases
 alias showdotfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -60,8 +66,10 @@ alias unquarantine="xattr -r -d com.apple.quarantine "
 alias rmdropboxattr="xattr -r -d com.dropbox.attributes "
 alias stdchmod="find . -type d | xargs chmod 755; find . -type f | xargs chmod 644"
 
+alias utctime="date -u"
+
 ## Networking Shortcuts
-alias flushdns="dscacheutil -flushcache"
+alias flushdns='dscacheutil -flushcache; echo "Flushed. You may also need to visit chrome://net-internals/#dns to flush Chrome internal DNS"'
 alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\ -f2'
 alias ip1="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias ip2="curl -s http://www.showmyip.com/simple/ | awk '{print $1}'"

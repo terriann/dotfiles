@@ -44,6 +44,6 @@ brew cask install --appdir="/Applications" dash
 
 
 # Google Things
-echo Do not Install Chrome - there were issue with 1pass extension.
+#echo Do not Install Chrome - there were issue with 1pass extension.
 #brew cask install --appdir="/Applications" google-chrome
 #brew cask install --appdir="~/Applications" chrome-devtools

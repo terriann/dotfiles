@@ -128,7 +128,7 @@ These are the commands tht trigger a couple commands to yield a specific result.
 
 |   Alias   |   Description     |
 |---    |---    |
-|   `bash-reload`    |   `source ~/.profile && printf '=> Bash profile reset.\n'`    |   Refresh Shell and reload from ~/.profile with visual confirmation    |
+|   `bash-reload`    |   `source ~/.profile && printf '=> Terminal profile reset.\n'`    |   Refresh Shell and reload from ~/.profile with visual confirmation    |
 |   `bash-clear-history`    |   `cat /dev/null > ~/.bash_history && history -c && exit`    |   Clears bash history    |
 |   `pubkey`    |   Copy public key to keyboard    |
 |   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vunerable packages.    |
