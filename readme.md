@@ -194,7 +194,8 @@ Some of the resources I used and found while setting up configurations
 * [Gist octocat/.gitignore](https://gist.github.com/octocat/9257657)
 * [7 Git Hacks](https://medium.freecodecamp.org/7-git-hacks-you-just-can-t-ignore-41aea137727a)
 * [Github bear/bear](https://github.com/bear/bear) - dotfiles, tools, notes and and config scripts
-
+* [/paulmillr/dotfiles](https://github.com/paulmillr/dotfiles)
+* [Dotfile inspiration](https://dotfiles.github.io/inspiration/)
 ### Homebrew
 
 * [How to and Best of Homebrew - gist indiesquidge/homebrew.md](https://gist.github.com/indiesquidge/ec010eca3ffa254788c2)

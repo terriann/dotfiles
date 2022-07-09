@@ -7,9 +7,9 @@ alias composer="php /usr/local/bin/composer.phar"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # Shell Shortcuts
-alias ..="cd ../"
-alias ...="cd ../../"
-alias ~="cd ~"
+# alias ..="cd ../"
+# alias ...="cd ../../"
+# alias ~="cd ~"
 alias mkdir="mkdir -p"
 alias ll="ls -lhaG"
 alias ls="ls -GA"
