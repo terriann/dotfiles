@@ -25,6 +25,12 @@ alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy && printf '=> Public key copied to pasteboard.\n'"
 alias eject-all="diskutil eject /Volumes/*;diskutil unmountDisk /Volumes/*"
 
+## Utility command to make and move into a directory
+mkcd ()
+{
+  mkdir -p -- "$1" && cd -P -- "$1"
+}
+
 # Customize Bash Prompt
 ## Add display when in an ssh session
 if [ -n "$SSH_CLIENT" ]; then text=" ssh-session"; fi
