@@ -1,7 +1,7 @@
 # Terri's Dotfiles
 - [Terri's Dotfiles](#terris-dotfiles)
 	- [Files include](#files-include)
-	- [Requirements](#requirements)
+	- [Prerequesites](#prerequesites)
 	- [Install](#install)
 		- [ZSH Conversion](#zsh-conversion)
 	- [Features](#features)
@@ -11,7 +11,7 @@
 	- [What's Inside](#whats-inside)
 		- [git Configuration](#git-configuration)
 			- [Git Shortcuts](#git-shortcuts)
-		- [Shell Aliases & Configurations](#shell-aliases--configurations)
+		- [Shell Aliases \& Configurations](#shell-aliases--configurations)
 			- [Shell Shortcuts](#shell-shortcuts)
 			- [Utility Mini-scripts](#utility-mini-scripts)
 			- [Shortcuts for Common Applications](#shortcuts-for-common-applications)
@@ -21,7 +21,7 @@
 	- [Changelog](#changelog)
 	- [Resources](#resources)
 		- [Homebrew](#homebrew)
-		- [Bash, Shell & Terminal Resources](#bash-shell--terminal-resources)
+		- [Bash, Shell \& Terminal Resources](#bash-shell--terminal-resources)
 
 This is a repository of my MacOS dotfiles. Project is still a work in progress.
 
@@ -31,9 +31,10 @@ This is a repository of my MacOS dotfiles. Project is still a work in progress.
 * `.gitconfig` git configuration
 * `.gitignore_global` a global git ignore
 
-## Requirements
+## Prerequesites
 
-Set zsh as your login shell.
+* Set zsh as your login shell.
+* Install [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm) to manage Node.js and NPM versions.
 
 ## Install
 
@@ -129,10 +130,12 @@ These are the commands tht trigger a couple commands to yield a specific result.
 
 |   Alias   |   Description     |
 |---    |---    |
-|   `bash-reload`    |   `source ~/.profile && printf '=> Terminal profile reset.\n'`    |   Refresh Shell and reload from ~/.profile with visual confirmation    |
-|   `bash-clear-history`    |   `cat /dev/null > ~/.bash_history && history -c && exit`    |   Clears bash history    |
+|   `bash-reload`    |   Refresh Shell and reload from ~/.profile with visual confirmation    |
+|   `bash-clear-history`    |   Clears bash history    |
 |   `pubkey`    |   Copy public key to keyboard    |
 |   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vunerable packages.    |
+|   `npmup`    |   Uses NVM to update to the latest version of NPM and updates all global packages.    |
+|   `nodelts`    |   Uses NVM to update to the LTS version of Node.js    |
 |   `eject-all`    |   Eject all devices    |
 
 #### Shortcuts for Common Applications
