@@ -1,3 +1,4 @@
 [user]
     #name = USERNAME
     #email = email@example.com
+	#signingkey = key-goes-here

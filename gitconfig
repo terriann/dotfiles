@@ -22,8 +22,6 @@
 	st = status
 	reset = checkout --
 	unstage = reset HEAD --
-[include]
-  path = ~/.dotfiles/gitconfig.local
 [apply]
    whitespace = nowarn
 [mergetool]
@@ -37,3 +35,15 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[user] 
+    # This key doesn't exist, causing commits to fail
+    # unless there's an appropriate override.
+    signingkey = invalid-key-does-not-exist-00000000
+[commit]
+	# Force signing across all machines.
+	gpgsign = true
+[gpg]
+    program = gpg
+[include]
+  # Include should always be last so local can override any config value.
+  path = ~/.dotfiles/gitconfig.local
