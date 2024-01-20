@@ -170,7 +170,7 @@ These are the commands tht trigger a couple commands to yield a specific result.
 |   `flushdns`    |   `dscacheutil -flushcache`    |   Flush DNS    |
 |   `ip`    |   `ifconfig \| grep "inet " \| grep -v 127.0.0.1 \| cut -d\ -f2`    |   Simple IP information output    |
 |   `ip1`    |   `ifconfig -a \| perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'`    |   More detailed IP information output    |
-|   `ip2`    |   `curl -s "https://en.wordpress.com/whatismyip?" | awk "{print $1}"`    |   External IP information output    |
+|   `ip2`    |   `curl -s "https://en.wordpress.com/whatismyip?" \| awk "{print $1}"`    |   External IP information output    |
 
 ## Troubleshooting
 
