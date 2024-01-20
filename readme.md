@@ -27,7 +27,7 @@ This is a repository of my MacOS dotfiles. Project is still a work in progress.
 
 ## Files include
 
-* `.profile` bash profile
+* `.profile` bash/zsh profile
 * `.gitconfig` git configuration
 * `.gitignore_global` a global git ignore
 
@@ -40,18 +40,24 @@ This is a repository of my MacOS dotfiles. Project is still a work in progress.
 
 Clone onto your laptop:
 
-    git clone git://github.com/terriann/dotfiles.git ~/.dotfiles
+```shell
+git clone git://github.com/terriann/dotfiles.git ~/.dotfiles
+```
 
 (Or, [fork and keep your forked copy
 updated](https://help.github.com/articles/syncing-a-fork/)).
 
 Install the dotfiles:
 
-    bash ~/.dotfiles/setup.sh
+```shell
+bash ~/.dotfiles/setup.sh
+```
 
 If using the base Homebrew setup also run this script:
 
-    bash ~/.dotfiles/setup/homebrew.sh
+```shell
+bash ~/.dotfiles/setup/brew.sh
+```
 
 This command will create symlinks for config files in your home directory.
 
@@ -63,7 +69,7 @@ You may need to add the following line to your `~/.zshrc` inorder for the aliase
 
 	[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
-This was present in the `~/.bash_profile` previously.
+If you're using bash as your default shell, this may need to be added to `~/.bash_profile` instead.
 
 ## Features
 
@@ -77,13 +83,14 @@ Some sample local files are included, just rename the file to remove `.sample`
 
 ### Homebrew starter
 
-A setup file `/setup/homebrew.sh` will do a prelimiary Homebrew setup. It includes Git, Ruby and the `tree` command.
+A setup file `/setup/brew.sh` will do a prelimiary Homebrew setup. It includes a number of packages, commands, and helpful applications installed as casks.
 
 ### WordPress CLI Autocomplete Support
 
+**Currently unsupported.**
+
 The WordPress autocomplete script is included in your profile, support requires the CP-CLI command `wp` can run correctly in the acive environment.
 
-Currently unsupported.
 
 ## What's Inside
 
@@ -126,7 +133,7 @@ Currently unsupported.
 
 #### Utility Mini-scripts
 
-These are the commands tht trigger a couple commands to yield a specific result.
+These are the commands that trigger simple scripts or series of commands to yield a specific outcome.
 
 |   Alias   |   Description     |
 |---    |---    |
@@ -134,8 +141,9 @@ These are the commands tht trigger a couple commands to yield a specific result.
 |   `bash-clear-history`    |   Clears bash history    |
 |   `pubkey`    |   Copy public key to keyboard    |
 |   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vunerable packages.    |
-|   `npmup`    |   Uses NVM to update to the latest version of NPM and updates all global packages.    |
-|   `nodelts`    |   Uses NVM to update to the LTS version of Node.js    |
+|   `npmup`    |   Uses NVM to update to the latest version of NPM and updates all global packages. Includes custom scripts to log and compare global npm packages before and after the update.    |
+|   `nodelts`    |   Uses NVM to update to the LTS version of Node.js.  Includes custom scripts to log and compare global npm packages before and after the update.    |
+|   `nodeup`    |   Alias to `nodelts`.    |
 |   `eject-all`    |   Eject all devices    |
 
 #### Shortcuts for Common Applications
@@ -199,6 +207,7 @@ Some of the resources I used and found while setting up configurations
 * [Github bear/bear](https://github.com/bear/bear) - dotfiles, tools, notes and and config scripts
 * [/paulmillr/dotfiles](https://github.com/paulmillr/dotfiles)
 * [Dotfile inspiration](https://dotfiles.github.io/inspiration/)
+* 
 ### Homebrew
 
 * [How to and Best of Homebrew - gist indiesquidge/homebrew.md](https://gist.github.com/indiesquidge/ec010eca3ffa254788c2)
