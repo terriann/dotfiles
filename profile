@@ -63,7 +63,6 @@ alias chrome="open -a Google\ Chrome"
 alias brave="open -a Brave\ Browser"
 alias safari="open -a Safari"
 alias finder="open ."
-alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfiles/"
 
 # MacOS related Aliases
 alias showdotfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -81,6 +80,9 @@ alias flushdns='dscacheutil -flushcache; echo "Flushed. You may also need to vis
 alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\ -f2'
 alias ip1="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias ip2="curl -s http://www.showmyip.com/simple/ | awk '{print $1}'"
+
+## Quick Access Projects
+alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfiles/dotfiles.code-workspace"
 
 # Load local settings/overrides
 source ~/.dotfiles/profile.local
