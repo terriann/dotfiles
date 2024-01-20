@@ -79,7 +79,7 @@ alias utctime="date -u"
 alias flushdns='dscacheutil -flushcache; echo "Flushed. You may also need to visit chrome://net-internals/#dns to flush Chrome internal DNS"'
 alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\ -f2'
 alias ip1="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
-alias ip2="curl -s http://www.showmyip.com/simple/ | awk '{print $1}'"
+alias ip2='curl -s "https://en.wordpress.com/whatismyip?" | awk "{print $1}"'
 
 ## Quick Access Projects
 alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfiles/dotfiles.code-workspace"
