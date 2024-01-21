@@ -140,10 +140,9 @@ These are the commands that trigger simple scripts or series of commands to yiel
 |   `bash-reload`    |   Refresh Shell and reload from ~/.profile with visual confirmation    |
 |   `bash-clear-history`    |   Clears bash history    |
 |   `pubkey`    |   Copy public key to keyboard    |
-|   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vunerable packages.    |
-|   `npmup`    |   Uses NVM to update to the latest version of NPM and updates all global packages. Includes custom scripts to log and compare global npm packages before and after the update.    |
-|   `nodelts`    |   Uses NVM to update to the LTS version of Node.js.  Includes custom scripts to log and compare global npm packages before and after the update.    |
-|   `nodeup`    |   Alias to `nodelts`.    |
+|   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vunerable packages    |
+|   `npmup`    |   Uses NVM to update to the latest version of NPM and updates all global packages with scripts to log and compare global npm packages before and after the update  |
+|   `nodeup`    |   Uses NVM to update to the LTS version of Node.js with scripts to log and compare global npm packages before and after the update  |
 |   `eject-all`    |   Eject all devices    |
 
 #### Shortcuts for Common Applications
