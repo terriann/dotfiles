@@ -2,9 +2,9 @@
 export SVN_EDITOR=/usr/bin/vi
 
 # Server related Aliases
-alias composer="php /usr/local/bin/composer.phar"
+#alias composer="php /usr/local/bin/composer.phar"
 # Include composer to run phpcs and other Composer libraries globally
-export PATH="$PATH:$HOME/.composer/vendor/bin"
+#export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # Shell Shortcuts
 # alias ..="cd ../"
@@ -27,7 +27,7 @@ alias nodelts='bash ~/.dotfiles/scripts/npm-packages.sh before && nvm install --
 alias nodeup=nodelts
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy && printf '=> Public key copied to pasteboard.\n'"
 alias eject-all="diskutil eject /Volumes/*;diskutil unmountDisk /Volumes/*"
-alias git-prune-branches="git branch --merged ${1:-main} | grep -v '^[ *]*${1:-main}$' | xargs git branch -d"
+alias git-prune-branches="git checkout main && git branch --merged main | grep -v '^[ *]*main$' | xargs git branch -d"
 
 ## Utility command to make and move into a directory
 mkcd ()
