@@ -133,9 +133,9 @@ These are the commands tht trigger a couple commands to yield a specific result.
 |   `bash-reload`    |   Refresh Shell and reload from ~/.profile with visual confirmation    |
 |   `bash-clear-history`    |   Clears bash history    |
 |   `pubkey`    |   Copy public key to keyboard    |
-|   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vunerable packages.    |
-|   `npmup`    |   Uses NVM to update to the latest version of NPM and updates all global packages.    |
-|   `nodelts`    |   Uses NVM to update to the LTS version of Node.js    |
+|   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vunerable packages    |
+|   `npmup`    |   Uses NVM to update to the latest version of NPM and updates all global packages, with logging and diff of global NPM packages   |
+|   `nodeup`    |   Uses NVM to update to the LTS version of Node.js, with logging and diff of global NPM packages    |
 |   `eject-all`    |   Eject all devices    |
 
 #### Shortcuts for Common Applications
