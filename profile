@@ -27,6 +27,7 @@ alias nodelts='bash ~/.dotfiles/scripts/npm-packages.sh before && nvm install --
 alias nodeup=nodelts
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy && printf '=> Public key copied to pasteboard.\n'"
 alias eject-all="diskutil eject /Volumes/*;diskutil unmountDisk /Volumes/*"
+alias git-prune-branches="git checkout main && git branch --merged main | grep -v '^[ *]*main$' | xargs git branch -d"
 
 ## Utility command to make and move into a directory
 mkcd ()

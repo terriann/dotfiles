@@ -144,6 +144,7 @@ These are the commands that trigger simple scripts or series of commands to yiel
 |   `npmup`    |   Uses NVM to update to the latest version of NPM and updates all global packages with scripts to log and compare global npm packages before and after the update  |
 |   `nodeup`    |   Uses NVM to update to the LTS version of Node.js with scripts to log and compare global npm packages before and after the update  |
 |   `eject-all`    |   Eject all devices    |
+|   `git-prune-branches`   |   Prunes (deletes) all local branches that have been merged into `main` after checking out the main branch. |
 
 #### Shortcuts for Common Applications
 
