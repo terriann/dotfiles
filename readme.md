@@ -142,6 +142,7 @@ These are the commands that trigger simple scripts or series of commands to yiel
 |---    |---    |
 |   `bash-reload`    |   Refresh Shell and reload from ~/.profile with visual confirmation    |
 |   `bash-clear-history`    |   Clears bash history    |
+|   `zsh-clear-history`    |   Clears zsh history    |
 |   `pubkey`    |   Copy public key to keyboard    |
 |   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vulnerable packages    |
 |   `npmup`    |   Uses NVM to update to the latest version of NPM and updates all global packages with scripts to log and compare global npm packages before and after the update  |
@@ -179,7 +180,7 @@ These are the commands that trigger simple scripts or series of commands to yiel
 |   Alias    | Command      | Description   |
 |---    |---    |---    |
 |   `flushdns`    |   `dscacheutil -flushcache`    |   Flush DNS    |
-|   `ip`    |   `ifconfig \| grep "inet " \| grep -v 127.0.0.1 \| cut -d\ -f2`    |   Simple IP information output    |
+|   `ip`    |   `ifconfig \| grep "inet " \| grep -v 127.0.0.1`    |   Simple IP information output    |
 |   `ip1`    |   `ifconfig -a \| perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'`    |   More detailed IP information output    |
 |   `ip2`    |   `curl -s "https://en.wordpress.com/whatismyip?" \| awk "{print $1}"`    |   External IP information output    |
 
@@ -208,7 +209,6 @@ Some of the resources I used and found while setting up configurations
 * [Github bear/bear](https://github.com/bear/bear) - dotfiles, tools, notes and and config scripts
 * [/paulmillr/dotfiles](https://github.com/paulmillr/dotfiles)
 * [Dotfile inspiration](https://dotfiles.github.io/inspiration/)
-*
 
 ### Homebrew
 
@@ -218,4 +218,5 @@ Some of the resources I used and found while setting up configurations
 ### Bash, Shell & Terminal Resources
 
 * [How can I list and edit all defined aliases in Terminal? - stackoverflow](https://apple.stackexchange.com/questions/25352/how-can-i-list-and-edit-all-defined-aliases-in-terminal) - good for when you've taken your configuration too far down the rabbit hole and months later need to crawl back out.
-* [The macOS School of Terminal Witchcraft and Wizardry - Armin Briegel](https://www.youtube.com/watch?v=GMqj90jDCbE) - Excellent presentation with LOADS of Terminal efficiency tips. Definitly worth a rewatch
+* [The macOS School of Terminal Witchcraft and Wizardry - Armin Briegel](https://www.youtube.com/watch?v=GMqj90jDCbE) - Excellent presentation with LOADS of Terminal efficiency tips. Definitely worth a watch
+* [Better zsh history](https://www.soberkoder.com/better-zsh-history/)

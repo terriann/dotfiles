@@ -21,6 +21,7 @@ alias catn="cat -n"
 alias bash-reload="source ~/.profile && printf '=> Terminal profile reset.\n'"
 alias terminal-reload="source ~/.profile && printf '=> Profile reset.\n'"
 alias bash-clear-history="cat /dev/null > ~/.bash_history && history -c && exit"
+alias zsh-clear-history="cat /dev/null > $HISTFILE && history -p && exit"
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias npmup='bash ~/.dotfiles/scripts/npm-packages.sh before && nvm install-latest-npm  && npm update -g && bash ~/.dotfiles/scripts/npm-packages.sh after'
 alias nodelts='bash ~/.dotfiles/scripts/npm-packages.sh before && nvm install --lts && nvm use --lts && bash ~/.dotfiles/scripts/npm-packages.sh after'
@@ -35,14 +36,9 @@ mkcd ()
   mkdir -p -- "$1" && cd -P -- "$1"
 }
 
-# Customize Bash Prompt
+# Customize Prompt
 ## Add display when in an ssh session
 if [ -n "$SSH_CLIENT" ]; then text=" ssh-session"; fi
-
-## Bash command prompt
-#export PS1="
-#\[\033[1;35m\]\u\[\033[0m\]:\[\033[1;36m\]\W\[\033[1;32m\]${text}
-#\[\033[0;37m\]$ "
 
 ## ZSH command prompt
 export PROMPT='
@@ -56,9 +52,6 @@ export RPROMPT="%F{yellow}[ %D{%f-%m-%y} %D{%L:%M:%S} ]"
 
 # Shortcuts for Common Applications
 alias sublime="open -a Sublime\ Text"
-# Removing in favor of app supported shell command
-# @link https://code.visualstudio.com/docs/setup/mac
-#alias code="open -a Visual\ Studio\ Code"
 alias photoshop="open -a Adobe\ Photoshop\ CS"
 alias preview="open -a Preview"
 alias chrome="open -a Google\ Chrome"
@@ -79,7 +72,7 @@ alias utctime="date -u"
 
 ## Networking Shortcuts
 alias flushdns='dscacheutil -flushcache; echo "Flushed. You may also need to visit chrome://net-internals/#dns to flush Chrome internal DNS"'
-alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\ -f2'
+alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1'
 alias ip1="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias ip2='curl -s "https://en.wordpress.com/whatismyip?" | awk "{print $1}"'
 
@@ -88,6 +81,12 @@ alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfile
 
 # Load local settings/overrides
 source ~/.dotfiles/profile.local
+
+# Adds timestamp to ~/.zsh_history
+# Ex: history -E -15
+setopt EXTENDED_HISTORY
+# Prevent duplicates entries in ~/.zsh_history
+setopt HIST_IGNORE_ALL_DUPS
 
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
