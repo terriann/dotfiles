@@ -1,8 +1,45 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "cSpell.words": [
+            "Armin",
+            "brewup",
+            "Briegel",
+            "catn",
+            "dscacheutil",
+            "flushcache",
+            "flushdns",
+            "hidedeskicons",
+            "hidedotfiles",
+            "indiesquidge",
+            "inet",
+            "nodeup",
+            "npmup",
+            "octocat",
+            "paulmillr",
+            "Photoshop",
+            "pubkey",
+            "rmdropboxattr",
+            "showdeskicons",
+            "showdotfiles",
+            "Stackoverflow",
+            "stdchmod",
+            "thoughtbot",
+            "unquarantine",
+            "xattr",
+            "yanyaoer",
+            "ymendel"
+        ],
+        "cSpell.ignoreRegExpList": ["unstage[ds]?", "dotfile[s]?"],
+        "files.associations": {
+            "gitconfig.local": "properties",
+            "gitconfig.local.sample": "properties",
+            "profile.local": "shellscript",
+            "profile.local.sample": "shellscript"
+        }
+    }
 }
