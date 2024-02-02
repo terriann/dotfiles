@@ -1,11 +1,6 @@
 # set the editor for SVN
 export SVN_EDITOR=/usr/bin/vi
 
-# Server related Aliases
-alias composer="php /usr/local/bin/composer.phar"
-# Include composer to run phpcs and other Composer libraries globally
-export PATH="$PATH:$HOME/.composer/vendor/bin"
-
 # Shell Shortcuts
 # alias ..="cd ../"
 # alias ...="cd ../../"
