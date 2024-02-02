@@ -42,8 +42,14 @@ export PROMPT='
 
 # Date time in the right of the prompt
 # @link https://gist.github.com/zulhfreelancer/9c410cad5efa9c5f7c74cd0849765865
-# @todo - Make UTC instead of local. Accepting PRs
-export RPROMPT="%F{yellow}[ %D{%f-%m-%y} %D{%L:%M:%S} ]"
+export RPROMPT="%F{yellow}[ %D{%L:%M:%S} ]"
+
+# Prompt auto update so that it stores the time the command was submitted
+# @link https://stackoverflow.com/a/17915260
+TMOUT=1
+TRAPALRM() {
+    zle reset-prompt
+}
 
 # Shortcuts for Common Applications
 alias sublime="open -a Sublime\ Text"
