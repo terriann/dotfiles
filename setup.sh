@@ -47,7 +47,7 @@ touch ~/.dotfiles/profile.local
 # 2. Make symlinks
 link "gitconfig" ".gitconfig" true
 link "profile"
-link "zshrc"
+link "zshrc" ".zshrc" true
 link_curlrc
 
 # 3. Have the terminal reload the profile

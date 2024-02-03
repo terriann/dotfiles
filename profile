@@ -93,9 +93,3 @@ alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfile
 
 # Load local settings/overrides
 source ~/.dotfiles/profile.local
-
-# Adds timestamp to ~/.zsh_history
-# Ex: history -E -15
-setopt EXTENDED_HISTORY
-# Prevent duplicates entries in ~/.zsh_history
-setopt HIST_IGNORE_ALL_DUPS
