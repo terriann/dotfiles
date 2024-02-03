@@ -2,7 +2,7 @@
 	default = matching
 [core]
 	autocrlf = input
-	excludesfile = ~/.dotfiles/gitignore_global
+	excludesfile = ~/.dotfiles/.gitignore_global
 [color]
 	diff = auto
 	status = auto
@@ -40,7 +40,7 @@
 	process = git-lfs filter-process
 [user]
     # This key doesn't exist, causing commits to fail
-    # The value should be set appropriately in the gitconfig.local file.
+    # The value should be set appropriately in the .gitconfig.local file.
     signingkey = invalid-key-does-not-exist-00000000
 	name =
 	email =
@@ -51,7 +51,8 @@
     # Use GPG2 by default.
 	program = gpg2
 [include]
-  # Use local gitconfig.local file for overrides that don't belong in the public repo.
-  path = ~/.dotfiles/gitconfig.local
+  # Use local .gitconfig.local file for overrides that don't belong in the public repo.
+  # Include should always be last so local can override any config value.
+  path = ~/.dotfiles/.gitconfig.local
 [init]
 	defaultBranch = main
