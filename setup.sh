@@ -34,7 +34,7 @@ touch ~/.dotfiles/.profile.local
 
 link ".gitconfig" true true
 link "profile" true false
-link "zshrc" true false
+link ".zshrc" true true
 
 source ~/.profile
 printf '=> Profile reset.\n'
