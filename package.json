@@ -1,27 +1,27 @@
 {
-  "name": "terriann-dotfiles",
-  "description": "My MacOS configuration files",
-  "version": "1.0.0",
-  "main": "",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "markdownlint": "npx markdownlint-cli2 '**/*.md' '#node_modules'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/terriann/dotfiles.git"
-  },
-  "keywords": [
-    "dotfiles"
-  ],
-  "author": "Terri Ann Swallow",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/terriann/dotfiles/issues"
-  },
-  "homepage": "https://github.com/terriann/dotfiles#readme",
-  "devDependencies": {
-    "markdownlint": "^0.33.*",
-    "markdownlint-cli2": "^0.12.*"
-  }
+    "name": "terriann-dotfiles",
+    "description": "My MacOS configuration files",
+    "version": "2.0.0",
+    "main": "",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "markdownlint": "npx markdownlint-cli2 '**/*.md' '#node_modules'"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/terriann/dotfiles.git"
+    },
+    "keywords": [
+        "dotfiles"
+    ],
+    "author": "Terri Ann Swallow",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/terriann/dotfiles/issues"
+    },
+    "homepage": "https://github.com/terriann/dotfiles#readme",
+    "devDependencies": {
+        "markdownlint": "^0.33.*",
+        "markdownlint-cli2": "^0.12.*"
+    }
 }
