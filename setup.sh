@@ -6,25 +6,27 @@
 # @Todo add /backup dir to git ignore
 # cp .* to the above dir
 
-# link <name> [<target>]
+# link <name> [<target>] [<force>]
 #
 # Creates symlink from ~/.<name> → ~/.dotfiles/<target>; target overrides are optional and default to <name>.
+# Pass force=true to re-create the symlink even if it already exists (e.g. when the target path has changed).
 #
 # @example
-# link "gitconfig" "gitconfig.local"
+# link "gitconfig" ".gitconfig" true
 # link "profile"
 
 link() {
     local name="$1"
     # If a second argument is provided, use it as the target file name, otherwise default to the first argument.
     local target="${2:-$1}"
+    local force="${3:-false}"
     local dest="$HOME/.$name"
     local src="$HOME/.dotfiles/$target"
 
     echo "Linking $dest to $src"
 
-    if [ ! -h "$dest" ]; then
-        ln -s "$src" "$dest"
+    if [ ! -h "$dest" ] || [ "$force" == true ]; then
+        ln -sf "$src" "$dest"
     fi
 }
 
@@ -39,11 +41,11 @@ link_curlrc() {
 }
 
 # 1. Create local files, if not present
-touch ~/.dotfiles/gitconfig.local
+touch ~/.dotfiles/.gitconfig.local
 touch ~/.dotfiles/profile.local
 
 # 2. Make symlinks
-link "gitconfig"
+link "gitconfig" ".gitconfig" true
 link "profile"
 link "zshrc"
 link_curlrc
