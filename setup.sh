@@ -42,14 +42,14 @@ link_curlrc() {
 
 # 1. Create local files, if not present
 touch ~/.dotfiles/.gitconfig.local
-touch ~/.dotfiles/profile.local
+touch ~/.dotfiles/.profile.local
 
 # 2. Make symlinks
 link "gitconfig" ".gitconfig" true
-link "profile"
+link "profile" ".profile" true
 link "zshrc" ".zshrc" true
 link_curlrc
 
 # 3. Have the terminal reload the profile
 source ~/.profile
-printf '=> Profile reset.\n'
+printf '=> Terminal profile reset.\n'

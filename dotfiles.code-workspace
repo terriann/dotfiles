@@ -40,8 +40,8 @@
             ".gitconfig.local": "properties",
             ".gitconfig.local.sample": "properties",
             ".gitignore_global": "ignore",
-            "profile.local": "shellscript",
-            "profile.local.sample": "shellscript"
+            ".profile.local": "shellscript",
+            ".profile.local.sample": "shellscript"
         }
     }
 }
