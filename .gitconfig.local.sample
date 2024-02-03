@@ -1,0 +1,10 @@
+[user]
+    name = USERNAME
+    email = email@example.com
+	signingkey = NO-KEY--DEFINE-IDENTITY-BASED-ON-REPO-ORG-IN-GLOBAL-GITCONFIG
+
+# My personal GitHub repos
+[includeIf "hasconfig:remote.*.url:git@github.com:terriann/**"]
+        path = ~/.dotfiles/.gitconfig.personal.local
+[includeIf "hasconfig:remote.*.url:https://github.com/terriann/**"]
+        path = ~/.dotfiles/.gitconfig.personal.local

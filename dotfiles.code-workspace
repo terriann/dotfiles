@@ -36,8 +36,10 @@
         ],
         "cSpell.ignoreRegExpList": ["unstage[ds]?", "dotfile[s]?"],
         "files.associations": {
-            "gitconfig.local": "properties",
-            "gitconfig.local.sample": "properties",
+            ".gitconfig.*.local": "properties",
+            ".gitconfig.local": "properties",
+            ".gitconfig.local.sample": "properties",
+            ".gitignore_global": "ignore",
             "profile.local": "shellscript",
             "profile.local.sample": "shellscript"
         }
