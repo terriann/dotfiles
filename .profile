@@ -81,7 +81,7 @@ alias ip2='curl -s "https://en.wordpress.com/whatismyip?" | awk "{print $1}"'
 alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfiles/dotfiles.code-workspace"
 
 # Load local settings/overrides
-source ~/.dotfiles/profile.local
+source ~/.dotfiles/.profile.local
 
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
