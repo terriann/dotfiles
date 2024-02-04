@@ -6,11 +6,11 @@
         "style": "backtick"
     },
     "emphasis-style": {
-        "style": "asterisk"
+        "style": "dash"
     },
     "fenced-code-language": {
         "allowed_languages": [
-            "bash",
+            "shell",
             "html",
             "javascript",
             "json",

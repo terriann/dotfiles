@@ -1,11 +1,6 @@
 # set the editor for SVN
 export SVN_EDITOR=/usr/bin/vi
 
-# Server related Aliases
-alias composer="php /usr/local/bin/composer.phar"
-# Include composer to run phpcs and other Composer libraries globally
-export PATH="$PATH:$HOME/.composer/vendor/bin"
-
 # Shell Shortcuts
 # alias ..="cd ../"
 # alias ...="cd ../../"
@@ -47,8 +42,14 @@ export PROMPT='
 
 # Date time in the right of the prompt
 # @link https://gist.github.com/zulhfreelancer/9c410cad5efa9c5f7c74cd0849765865
-# @todo - Make UTC instead of local. Accepting PRs
-export RPROMPT="%F{yellow}[ %D{%f-%m-%y} %D{%L:%M:%S} ]"
+export RPROMPT="%F{yellow}[ %D{%L:%M:%S} ]"
+
+# Prompt auto update so that it stores the time the command was submitted
+# @link https://stackoverflow.com/a/17915260
+TMOUT=1
+TRAPALRM() {
+    zle reset-prompt
+}
 
 # Shortcuts for Common Applications
 alias sublime="open -a Sublime\ Text"
@@ -79,15 +80,15 @@ alias ip2='curl -s "https://en.wordpress.com/whatismyip?" | awk "{print $1}"'
 ## Quick Access Projects
 alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfiles/dotfiles.code-workspace"
 
-# Load local settings/overrides
-source ~/.dotfiles/profile.local
-
-# Adds timestamp to ~/.zsh_history
-# Ex: history -E -15
-setopt EXTENDED_HISTORY
-# Prevent duplicates entries in ~/.zsh_history
-setopt HIST_IGNORE_ALL_DUPS
-
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+## WordPress' WP-CLI autocomplete
+autoload bashcompinit
+bashcompinit
+source ~/.dotfiles/includes/wp-completion.bash
+
+# Load local settings/overrides
+source ~/.dotfiles/.profile.local

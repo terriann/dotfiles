@@ -2,7 +2,7 @@
 	default = matching
 [core]
 	autocrlf = input
-	excludesfile = ~/.dotfiles/gitignore_global
+	excludesfile = ~/.dotfiles/.gitignore_global
 [color]
 	diff = auto
 	status = auto
@@ -35,10 +35,10 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-[user] 
+[user]
     # This key doesn't exist, causing commits to fail
     # unless there's an appropriate override.
-    signingkey = invalid-key-does-not-exist-00000000
+    signingkey = NO-KEY-SET--DEFINE-KEY-OR-IDENTITY-IN-DOTFILES-gitconfig.local
 [commit]
 	# Force signing across all machines.
 	gpgsign = true
@@ -46,4 +46,4 @@
     program = gpg
 [include]
   # Include should always be last so local can override any config value.
-  path = ~/.dotfiles/gitconfig.local
+  path = ~/.dotfiles/.gitconfig.local

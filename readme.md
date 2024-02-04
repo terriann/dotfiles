@@ -1,33 +1,30 @@
 # Terri's Dotfiles
 
-<!-- markdownlint-disable MD010 MD007 -->
-* [Terri's Dotfiles](#terris-dotfiles)
-	* [Files include](#files-include)
-	* [Prerequisites](#prerequisites)
-	* [Install](#install)
-		* [ZSH Conversion](#zsh-conversion)
-	* [Features](#features)
-		* [Private local settings](#private-local-settings)
-		* [Homebrew starter](#homebrew-starter)
-		* [WordPress CLI Autocomplete Support](#wordpress-cli-autocomplete-support)
-	* [What's Inside](#whats-inside)
-		* [git Configuration](#git-configuration)
-			* [Git Shortcuts](#git-shortcuts)
-		* [Shell Aliases \& Configurations](#shell-aliases--configurations)
-			* [Shell Shortcuts](#shell-shortcuts)
-			* [Utility Mini-scripts](#utility-mini-scripts)
-			* [Shortcuts for Common Applications](#shortcuts-for-common-applications)
-			* [Shortcuts for MacOS Configs and Settings](#shortcuts-for-macos-configs-and-settings)
-			* [Networking Shortcuts](#networking-shortcuts)
-	* [Troubleshooting](#troubleshooting)
-	* [Changelog](#changelog)
-	* [Resources](#resources)
-		* [Homebrew](#homebrew)
-		* [Bash, Shell \& Terminal Resources](#bash-shell--terminal-resources)
-  
-<!-- markdownlint-enable MD010 -->
+This is a repository of my MacOS dotfiles and other preferences and configs that are to be sync'd between machines to create a consistent experience. This project is always a work in progress.
 
-This is a repository of my MacOS dotfiles. Project is still a work in progress.
+* [Files include](#files-include)
+* [Prerequisites](#prerequisites)
+* [Install](#install)
+* [Install the dotfiles](#install-the-dotfiles)
+* [Installing Homebrew and formulae](#installing-homebrew-and-formulae)
+  * [ZSH Conversion](#zsh-conversion)
+* [Features](#features)
+  * [Private local settings](#private-local-settings)
+  * [Homebrew starter](#homebrew-starter)
+  * [WordPress CLI Autocomplete Support](#wordpress-cli-autocomplete-support)
+  * [git Configuration](#git-configuration)
+    * [Git Shortcuts](#git-shortcuts)
+  * [Shell Aliases \& Configurations](#shell-aliases--configurations)
+    * [Shell Shortcuts](#shell-shortcuts)
+    * [Utility Mini-scripts](#utility-mini-scripts)
+    * [Shortcuts for Common Applications](#shortcuts-for-common-applications)
+    * [Shortcuts for MacOS Configs and Settings](#shortcuts-for-macos-configs-and-settings)
+    * [Networking Shortcuts](#networking-shortcuts)
+* [Troubleshooting](#troubleshooting)
+* [Changelog](#changelog)
+* [Resources](#resources)
+  * [Homebrew](#homebrew)
+  * [Bash, Shell \& Terminal Resources](#bash-shell--terminal-resources)
 
 ## Files include
 
@@ -42,36 +39,44 @@ This is a repository of my MacOS dotfiles. Project is still a work in progress.
 
 ## Install
 
-Clone onto your laptop:
+Clone onto your machine:
 
-```bash
+```shell
 git clone git://github.com/terriann/dotfiles.git ~/.dotfiles
 ```
 
 (Or, [fork and keep your forked copy
 updated](https://help.github.com/articles/syncing-a-fork/)).
 
-Install the dotfiles:
+## Install the dotfiles
 
-```bash
+Running the setup script will create symlinks for config files in your home directory.
+
+The script loads the new dotfiles upon completion, you will need to restart any other open terminal session in order for the commands to be available there.
+
+```shell
 bash ~/.dotfiles/setup.sh
 ```
 
-If using the base Homebrew setup also run this script:
+## Installing Homebrew and formulae
 
-```bash
+If you want to use Homebrew and my preferred formulae, run the following interactive script to install the bits and bobs.
+
+**Prerequisites**:
+
+* Brew needs to be installed first, using the latest installation instructions on [httpbrew.sh](https://brew.sh/)
+
+```shell
 bash ~/.dotfiles/setup/brew.sh
 ```
-
-This command will create symlinks for config files in your home directory.
-
-You will need to restart your terminal in order to make use of the changes.
 
 ### ZSH Conversion
 
 You may need to add the following line to your `~/.zshrc` in order for the aliases and settings to apply.
 
- [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+```shell
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+```
 
 If you're using bash as your default shell, this may need to be added to `~/.bash_profile` instead.
 
@@ -81,21 +86,24 @@ If you're using bash as your default shell, this may need to be added to `~/.bas
 
 Create a .local copy of setting you don't want to publish. The configs will give higher precedence to private local settings named with a .local filename extension.
 
-ex. `~/.dotfiles/<<CONFIG>>.local`
+Sample local files are included, just copy the file to remove `.sample`:
 
-Some sample local files are included, just rename the file to remove `.sample`
+```shell
+cp .profile.local.start .profile.local
+cp .gitconfig.local.start .gitconfig.local
+```
 
 ### Homebrew starter
 
-A setup file `/setup/brew.sh` will do a preliminary Homebrew setup. It includes a number of packages, commands, and helpful applications installed as casks.
+A setup file `/setup/brew.sh` is an interactive wizard that installs some basic formulae and casks. It includes a number of packages, commands, and helpful applications installed as casks.
 
 ### WordPress CLI Autocomplete Support
 
-**Currently unsupported.**
+The WordPress autocomplete script is loaded in the profile if the WP-CLI has already been installed.
 
-The WordPress autocomplete script is included in your profile, support requires the CP-CLI command `wp` can run correctly in the active environment.
+**Prerequisites**:
 
-## What's Inside
+* WP-CLI needs to be installed first, using the latest installation instructions on [wp-cli.org](https://wp-cli.org/#installing)
 
 ### [git](http://git-scm.com/) Configuration
 
@@ -188,10 +196,17 @@ These are the commands that trigger simple scripts or series of commands to yiel
 
 **Getting a prompt for Github username and password but I setup key:**
 
-Check this article to test your connection and authorize the key:  
+Check this article to test your connection and authorize the key:
 [Testing your SSH connection](https://help.github.com/articles/testing-your-ssh-connection/)
 
 ## Changelog
+
+2024-02-04 - Version 2 created
+
+* Refactored filenames and supporting functions
+* Enhancements to setup script `./scripts/setup.sh`
+* Enhancements to brew setup script `./scripts/brew.sh` to make it interactive.
+* Adds WP-CLI autocompletion
 
 ## Resources
 
@@ -217,6 +232,6 @@ Some of the resources I used and found while setting up configurations
 
 ### Bash, Shell & Terminal Resources
 
-* [How can I list and edit all defined aliases in Terminal? - stackoverflow](https://apple.stackexchange.com/questions/25352/how-can-i-list-and-edit-all-defined-aliases-in-terminal) - good for when you've taken your configuration too far down the rabbit hole and months later need to crawl back out.
+* [How can I list and edit all defined aliases in Terminal? - Stackoverflow](https://apple.stackexchange.com/questions/25352/how-can-i-list-and-edit-all-defined-aliases-in-terminal) - good for when you've taken your configuration too far down the rabbit hole and months later need to crawl back out.
 * [The macOS School of Terminal Witchcraft and Wizardry - Armin Briegel](https://www.youtube.com/watch?v=GMqj90jDCbE) - Excellent presentation with LOADS of Terminal efficiency tips. Definitely worth a watch
 * [Better zsh history](https://www.soberkoder.com/better-zsh-history/)

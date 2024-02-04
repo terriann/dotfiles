@@ -9,17 +9,32 @@
 # 2. Make symlinks
 
 link() {
-    if [ ! -h $HOME/.$1 ]; then
-        ln -s "$HOME/.dotfiles/$1" "$HOME/.$1"
+
+    local filename=$1
+    local new_filename=$1
+    local add_dot_prefix=${2:-false} # defaults to false
+    local force_symlink=${3:-false}  # defaults to false
+
+    # If forcing the dot prefix, check that it isn't there already.
+    if [[ $add_dot_prefix ]]; then
+        if [[ ! $filename == .* ]]; then
+            new_filename=".${1}"
+        fi
+    fi
+
+    # If the symlink doesn't exist, or if we are forcing.
+    if [ ! -h "$HOME/$new_filename" ] || [ "$force_symlink" == true ]; then
+        echo "$HOME/.dotfiles/$filename $HOME/$new_filename"
+        ln -sf "$HOME/.dotfiles/$filename" "$HOME/$new_filename"
     fi
 }
 
-touch ~/.dotfiles/gitconfig.local
-touch ~/.dotfiles/profile.local
+touch ~/.dotfiles/.gitconfig.local
+touch ~/.dotfiles/.profile.local
 
-link "gitconfig"
-link "profile"
-link "zshrc"
+link ".gitconfig" true true
+link ".profile" true true
+link ".zshrc" true true
 
 source ~/.profile
-printf '=> Profile reset.\n'
+printf '=> Terminal profile reset.\n'

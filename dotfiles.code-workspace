@@ -1,8 +1,50 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "cSpell.words": [
+            "Armin",
+            "brewup",
+            "Briegel",
+            "catn",
+            "dscacheutil",
+            "flushcache",
+            "flushdns",
+            "hidedeskicons",
+            "hidedotfiles",
+            "indiesquidge",
+            "inet",
+            "nodeup",
+            "npmup",
+            "octocat",
+            "paulmillr",
+            "Photoshop",
+            "pubkey",
+            "rmdropboxattr",
+            "showdeskicons",
+            "showdotfiles",
+            "Stackoverflow",
+            "stdchmod",
+            "thoughtbot",
+            "unquarantine",
+            "xattr",
+            "yanyaoer",
+            "ymendel"
+        ],
+        "cSpell.ignoreRegExpList": ["unstage[ds]?", "dotfile[s]?"],
+        "files.associations": {
+            ".gitconfig.*.local": "properties",
+            ".gitconfig.local": "properties",
+            ".gitconfig.local.sample": "properties",
+            ".gitignore_global": "ignore",
+            ".profile.local": "shellscript",
+            ".profile.local.sample": "shellscript"
+        },
+        "markdown.extension.toc.levels": "2..5",
+        "markdown.extension.toc.unorderedList.marker": "-",
+        "markdown.extension.tableFormatter.normalizeIndentation": false
+    }
 }
