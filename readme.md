@@ -1,33 +1,30 @@
 # Terri's Dotfiles
 
-<!-- markdownlint-disable MD010 MD007 -->
-* [Terri's Dotfiles](#terris-dotfiles)
-  * [Files include](#files-include)
-  * [Prerequisites](#prerequisites)
-  * [Install](#install)
-    * [ZSH Conversion](#zsh-conversion)
-  * [Features](#features)
-    * [Private local settings](#private-local-settings)
-    * [Homebrew starter](#homebrew-starter)
-    * [WordPress CLI Autocomplete Support](#wordpress-cli-autocomplete-support)
-  * [What's Inside](#whats-inside)
-    * [git Configuration](#git-configuration)
-      * [Git Shortcuts](#git-shortcuts)
-    * [Shell Aliases \& Configurations](#shell-aliases--configurations)
-      * [Shell Shortcuts](#shell-shortcuts)
-      * [Utility Mini-scripts](#utility-mini-scripts)
-      * [Shortcuts for Common Applications](#shortcuts-for-common-applications)
-      * [Shortcuts for MacOS Configs and Settings](#shortcuts-for-macos-configs-and-settings)
-      * [Networking Shortcuts](#networking-shortcuts)
-  * [Troubleshooting](#troubleshooting)
-  * [Changelog](#changelog)
-  * [Resources](#resources)
-    * [Homebrew](#homebrew)
-    * [Bash, Shell \& Terminal Resources](#bash-shell--terminal-resources)
+This is a repository of my MacOS dotfiles and other preferences and configs that are to be sync'd between machines to create a consistent experience. This project is always a work in progress.
 
-<!-- markdownlint-enable MD010 -->
-
-This is a repository of my MacOS dotfiles. Project is still a work in progress.
+* [Files include](#files-include)
+* [Prerequisites](#prerequisites)
+* [Install](#install)
+* [Install the dotfiles](#install-the-dotfiles)
+* [Installing Homebrew and formulae](#installing-homebrew-and-formulae)
+  * [ZSH Conversion](#zsh-conversion)
+* [Features](#features)
+  * [Private local settings](#private-local-settings)
+  * [Homebrew starter](#homebrew-starter)
+  * [WordPress CLI Autocomplete Support](#wordpress-cli-autocomplete-support)
+  * [git Configuration](#git-configuration)
+    * [Git Shortcuts](#git-shortcuts)
+  * [Shell Aliases \& Configurations](#shell-aliases--configurations)
+    * [Shell Shortcuts](#shell-shortcuts)
+    * [Utility Mini-scripts](#utility-mini-scripts)
+    * [Shortcuts for Common Applications](#shortcuts-for-common-applications)
+    * [Shortcuts for MacOS Configs and Settings](#shortcuts-for-macos-configs-and-settings)
+    * [Networking Shortcuts](#networking-shortcuts)
+* [Troubleshooting](#troubleshooting)
+* [Changelog](#changelog)
+* [Resources](#resources)
+  * [Homebrew](#homebrew)
+  * [Bash, Shell \& Terminal Resources](#bash-shell--terminal-resources)
 
 ## Files include
 
@@ -42,7 +39,7 @@ This is a repository of my MacOS dotfiles. Project is still a work in progress.
 
 ## Install
 
-Clone onto your laptop:
+Clone onto your machine:
 
 ```shell
 git clone git://github.com/terriann/dotfiles.git ~/.dotfiles
@@ -51,21 +48,27 @@ git clone git://github.com/terriann/dotfiles.git ~/.dotfiles
 (Or, [fork and keep your forked copy
 updated](https://help.github.com/articles/syncing-a-fork/)).
 
-Install the dotfiles:
+## Install the dotfiles
+
+Running the setup script will create symlinks for config files in your home directory.
+
+The script loads the new dotfiles upon completion, you will need to restart any other open terminal session in order for the commands to be available there.
 
 ```shell
 bash ~/.dotfiles/setup.sh
 ```
 
-If using the base Homebrew setup also run this script:
+## Installing Homebrew and formulae
+
+If you want to use Homebrew and my preferred formulae, run the following interactive script to install the bits and bobs.
+
+**Prerequisites**:
+
+* Brew needs to be installed first, using the latest installation instructions on [httpbrew.sh](https://brew.sh/)
 
 ```shell
 bash ~/.dotfiles/setup/brew.sh
 ```
-
-This command will create symlinks for config files in your home directory.
-
-You will need to restart your terminal in order to make use of the changes.
 
 ### ZSH Conversion
 
@@ -86,21 +89,21 @@ Create a .local copy of setting you don't want to publish. The configs will give
 Sample local files are included, just copy the file to remove `.sample`:
 
 ```shell
-cp profile.local.start profile.local
-cp gitconfig.local.start gitconfig.local
+cp .profile.local.start .profile.local
+cp .gitconfig.local.start .gitconfig.local
 ```
 
 ### Homebrew starter
 
-A setup file `/setup/brew.sh` will do a preliminary Homebrew setup. It includes a number of packages, commands, and helpful applications installed as casks.
+A setup file `/setup/brew.sh` is an interactive wizard that installs some basic formulae and casks. It includes a number of packages, commands, and helpful applications installed as casks.
 
 ### WordPress CLI Autocomplete Support
 
-**Currently unsupported.**
+The WordPress autocomplete script is loaded in the profile if the WP-CLI has already been installed.
 
-The WordPress autocomplete script is included in your profile, support requires the CP-CLI command `wp` can run correctly in the active environment.
+**Prerequisites**:
 
-## What's Inside
+* WP-CLI needs to be installed first, using the latest installation instructions on [wp-cli.org](https://wp-cli.org/#installing)
 
 ### [git](http://git-scm.com/) Configuration
 
@@ -197,6 +200,13 @@ Check this article to test your connection and authorize the key:
 [Testing your SSH connection](https://help.github.com/articles/testing-your-ssh-connection/)
 
 ## Changelog
+
+2024-02-04 - Version 2 created
+
+* Refactored filenames and supporting functions
+* Enhancements to setup script `./scripts/setup.sh`
+* Enhancements to brew setup script `./scripts/brew.sh` to make it interactive.
+* Adds WP-CLI autocompletion
 
 ## Resources
 
