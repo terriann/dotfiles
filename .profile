@@ -91,5 +91,10 @@ alias ip2='curl -s "https://en.wordpress.com/whatismyip?" | awk "{print $1}"'
 ## Quick Access Projects
 alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfiles/dotfiles.code-workspace"
 
+## WordPress' WP-CLI autocomplete
+autoload bashcompinit
+bashcompinit
+source ~/.dotfiles/includes/wp-completion.bash
+
 # Load local settings/overrides
 source ~/.dotfiles/.profile.local
