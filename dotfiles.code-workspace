@@ -42,6 +42,9 @@
             ".gitignore_global": "ignore",
             ".profile.local": "shellscript",
             ".profile.local.sample": "shellscript"
-        }
+        },
+        "markdown.extension.toc.levels": "2..5",
+        "markdown.extension.toc.unorderedList.marker": "-",
+        "markdown.extension.tableFormatter.normalizeIndentation": false
     }
 }
