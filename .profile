@@ -80,10 +80,15 @@ alias ip2='curl -s "https://en.wordpress.com/whatismyip?" | awk "{print $1}"'
 ## Quick Access Projects
 alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfiles/dotfiles.code-workspace"
 
-# Load local settings/overrides
-source ~/.dotfiles/.profile.local
-
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+## WordPress' WP-CLI autocomplete
+autoload bashcompinit
+bashcompinit
+source ~/.dotfiles/includes/wp-completion.bash
+
+# Load local settings/overrides
+source ~/.dotfiles/.profile.local
