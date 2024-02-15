@@ -48,8 +48,8 @@
 	# Force signing by default.
 	gpgsign = true
 [gpg]
-    # Use GPG2 by default.
-	program = gpg2
+    # Use GPG2 by default. Full path so GUI apps (e.g. VS Code) that don't inherit shell PATH still work.
+	program = /usr/local/MacGPG2/bin/gpg2
 [include]
   # Use local .gitconfig.local file for overrides that don't belong in the public repo.
   # Include should always be last so local can override any config value.
