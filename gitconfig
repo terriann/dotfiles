@@ -16,11 +16,14 @@
 	br = branch
 	ci = commit -a
 	co = checkout
+    curb = branch --show-current
 	graph = log --graph --pretty=format:'%C(yellow)%h%C(reset) -%C(cyan)%d%C(reset) %s %Cgreen(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --date=relative
 	last = log -1 HEAD
 	lg = log --stat --relative-date
-	st = status
+    # The ! runs the entire string as a shell command allowing us to use the nested git commands.
+	pushup = !git push -u origin $(git branch --show-current)
 	reset = checkout --
+	st = status
 	unstage = reset HEAD --
 [apply]
    whitespace = nowarn
@@ -35,15 +38,17 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-[user] 
+[user]
     # This key doesn't exist, causing commits to fail
     # unless there's an appropriate override.
     signingkey = invalid-key-does-not-exist-00000000
+	name = terriann
+	email = terri.ann.s@gmail.com
 [commit]
 	# Force signing across all machines.
 	gpgsign = true
 [gpg]
-    program = gpg
+	program = /usr/local/MacGPG2/bin/gpg2
 [include]
   # Include should always be last so local can override any config value.
   path = ~/.dotfiles/gitconfig.local
