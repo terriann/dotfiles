@@ -110,13 +110,15 @@ The WordPress autocomplete script is included in your profile, support requires 
 | `aliases`     |  `git aliases`     |  displays all available aliases         |
 | `amend`    |  `git amend`    |  amend your last commit with new message or additional staged changes           |
 | `br`    |  `git br`    |  branch                                        |
-| `ci`    |  `git ci`    |  commit all changes files `git commit -a`       |
+| `ci`    |  `git ci`    |  commit all changed files `git commit -a`       |
 | `co`    |  `git co`    |  checkout                                   |
+| `curb`  |  `git curb` | shows the current branch |
 | `graph` |  `git graph` |  display a graph view of the recent git history |
 | `last`    |  `git last`    |  view last commit to branch                 |
 | `lg`    |  `git lg`    |  log that shows relative dates and files changed                                   |
-| `st`    |  `git st`    |  status                                   |
+| `pushup` | `git pushup` | pushes the current branch to origin with upstream tracking   |
 | `reset`    |  `git reset`    |  reset a file back to it's HEAD state                                   |
+| `st`    |  `git st`    |  status                                   |
 | `unstage`    |  `git unstage`    |  unstages changes          |
 
 ### Shell Aliases & Configurations
