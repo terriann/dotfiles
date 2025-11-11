@@ -24,8 +24,9 @@ alias bash-clear-history="cat /dev/null > ~/.bash_history && history -c && exit"
 alias zsh-clear-history="cat /dev/null > $HISTFILE && history -p && exit"
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias npmup='bash ~/.dotfiles/scripts/npm-packages.sh before && nvm install-latest-npm  && npm update -g && bash ~/.dotfiles/scripts/npm-packages.sh after'
-alias nodelts='bash ~/.dotfiles/scripts/npm-packages.sh before && nvm install --lts && nvm use --lts && bash ~/.dotfiles/scripts/npm-packages.sh after'
-alias nodeup=nodelts
+alias nodelts=nodeup
+alias nvmup=nodeup
+alias nodeup='source ~/.dotfiles/scripts/nvm-update.sh'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy && printf '=> Public key copied to pasteboard.\n'"
 alias eject-all="diskutil eject /Volumes/*;diskutil unmountDisk /Volumes/*"
 alias git-prune-branches="git checkout main && git branch --merged main | grep -v '^[ *]*main$' | xargs git branch -d"

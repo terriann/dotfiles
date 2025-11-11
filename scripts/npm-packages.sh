@@ -1,4 +1,6 @@
 #!/bin/bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # ANSI color codes
 RED='\033[0;31m'
@@ -46,7 +48,7 @@ case $SCRIPTPOSITION in
             # Deleting mor elogs than the script will leave
             # creates a buffer for the next few runs.
             ls -1 -t $LOGDIR | grep -i -e '\.log$' | tail -n 10 | xargs -I {} rm "$LOGDIR/{}"
-            
+
             echo -e "${YELLOW}[LOGDIR CHECK]${RESET} Done.\n"
         fi
 
@@ -78,9 +80,19 @@ case $SCRIPTPOSITION in
         npm list -g
         echo -e "Logged a list of globally installed NPM packages to $LOGDIR/$LOGFILE for diff comparison...\n" # -e is necessary to support \n consistently.
 
-        diff --color -u $LOGDIR/$LOGFILEBEFORE $LOGDIR/$LOGFILEAFTER
+        git diff --color -u $LOGDIR/$LOGFILEBEFORE $LOGDIR/$LOGFILEAFTER
 
-        echo -e "✅ ${GREEN}Update complete.${RESET} Assess diff (above) to see if it is necessary to reinstall any global packages. Bye."
+        echo -e ""
+
+        echo -e "✅ ${GREEN}npm update complete.${RESET} Assess diff (above) to see if it is necessary to reinstall any global packages."
+
+        NVMLATEST=$(nvm ls-remote --lts --no-colors | tail -1 | sed -E 's/.*(v([0-9]+\.){2,}[0-9]+).*/\1/')
+
+        if [[ "$NODEV" != "$NVMLATEST" ]]; then
+            echo -e "👾 A more recent version of Node has been detected (${NVMLATEST}). Run nodeup to update."
+        fi
+
+        echo -e "Bye."
     ;;
 
   *)
