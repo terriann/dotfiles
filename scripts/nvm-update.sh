@@ -1,4 +1,14 @@
 #!/bin/bash
+
+# This script updates the Node.js version to the latest LTS version and
+# provides a list of globally installed npm packages that need to be reinstalled.
+#
+# Preferred Usage:
+#   Run `nodeup` in a terminal - which is an alias for this script.
+#
+# ManualUsage:
+#   nvm-update.sh
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
