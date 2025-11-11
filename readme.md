@@ -145,8 +145,8 @@ These are the commands that trigger simple scripts or series of commands to yiel
 |   `zsh-clear-history`    |   Clears zsh history    |
 |   `pubkey`    |   Copy public key to keyboard    |
 |   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vulnerable packages    |
-|   `npmup`    |   Uses NVM to update to the latest version of NPM and updates all global packages with scripts to log and compare global npm packages before and after the update  |
-|   `nodeup`    |   Uses NVM to update to the LTS version of Node.js with scripts to log and compare global npm packages before and after the update  |
+|   `npmup`    |   Updates NPM and global packages with before/after diff logging  |
+|   `nodeup`    |   Updates Node.js to LTS, and provides global package reinstall suggestions  |
 |   `eject-all`    |   Eject all devices    |
 |   `git-prune-branches`   |   Prunes (deletes) all local branches that have been merged into `main` after checking out the main branch. |
 
