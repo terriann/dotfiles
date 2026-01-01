@@ -3,9 +3,9 @@ export SVN_EDITOR=/usr/bin/vi
 
 
 # Shell Shortcuts
-# alias ..="cd ../"
-# alias ...="cd ../../"
-# alias ~="cd ~"
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ~="cd ~"
 alias mkdir="mkdir -p"
 alias ll="ls -lhaG"
 alias ls="ls -GA"

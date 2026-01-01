@@ -126,16 +126,18 @@ The WordPress autocomplete script is included in your profile, support requires 
 
 #### Shell Shortcuts
 
-|   Alias    | Command      | Description   |
-|---    |---    |---    |
-|   `..`    |    `cd ../`   |       |
-|   `...`    |   `cd ../../`    |       |
-|   `mkdir`    |   `mkdir -p`    |   Create intermediate directories as required but will not error on existing directories    |
-|   `ll`    |   `ls -lhaG`    |    Verbose, human readable color directory listing  |
-|   `ls`    |   `ls -GA`    |   Always ls in color and hide `.` and `..`    |
-|   `grep`    |   `grep --color=auto`    |    Always grep in color   |
-|   `ps`    |   `ps -ax`    |   Processes    |
-|   `catn`    |   `cat -n`    |   Concatenate and print content of files with line numbers    |
+| Command       | Description                                                   |
+|---------------|---------------------------------------------------------------|
+| `..`          | Go up one directory                                           |
+| `...`         | Go up two directories                                         |
+| `~`           | Go to home directory                                          |
+| `mkdir`       | Create directories as needed (no error if they exist)         |
+| `ll`          | List files verbosely with human-readable sizes and colors     |
+| `ls`          | List files in color, hide `.` and `..`                        |
+| `grep`        | Highlight matches in color                                    |
+| `ps`          | Show all processes                                            |
+| `catn`        | Display file contents with line numbers                       |
+
 
 #### Utility Mini-scripts
 
