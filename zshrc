@@ -1,4 +1,11 @@
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile%
+# Load .profile first
+if [[ -s "$HOME/.profile" ]]; then
+  source "$HOME/.profile"
+fi
 
-# case insensitive path-completion
-zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
+# Load NVM and ensure it takes precedence
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# Add ~/bin to PATH
+export PATH="$HOME/bin:$PATH"
