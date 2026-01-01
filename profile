@@ -1,7 +1,6 @@
 # set the editor for SVN
 export SVN_EDITOR=/usr/bin/vi
 
-
 # Shell Shortcuts
 alias ..="cd ../"
 alias ...="cd ../../"
@@ -14,17 +13,26 @@ alias ps="ps -ax"
 alias catn="cat -n"
 
 # Utility Mini-scripts
-alias bash-reload="source ~/.profile && printf '=> Terminal profile reset.\n'"
-alias terminal-reload="source ~/.profile && printf '=> Profile reset.\n'"
-alias bash-clear-history="cat /dev/null > ~/.bash_history && history -c && exit"
-alias zsh-clear-history="cat /dev/null > $HISTFILE && history -p && exit"
+alias reload-profile="source ~/.profile && printf '=> Terminal profile reset.\n'"
+alias clear-history="read -q 'REPLY?Are you sure you want to clear history? [y/N] ' && [[ $REPLY == [yY] ]] && cat /dev/null > $HISTFILE && history -p && exit"
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias npmup='bash ~/.dotfiles/scripts/npm-packages.sh before && nvm install-latest-npm  && npm update -g && bash ~/.dotfiles/scripts/npm-packages.sh after'
-alias nodelts=nodeup
-alias nvmup=nodeup
 alias nodeup='source ~/.dotfiles/scripts/nvm-update.sh'
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy && printf '=> Public key copied to pasteboard.\n'"
-alias eject-all="diskutil eject /Volumes/*;diskutil unmountDisk /Volumes/*"
+eject-all() {
+  # Two-line warning
+  echo "🚨 Ejecting all volumes (external drives, disk images, and network shares)."
+  echo "This could disrupt important mounted drives or unsaved work. Continue? (y/N)"
+
+  # Read user confirmation
+  read ans
+  if [[ $ans == [yY] ]]; then
+    diskutil eject /Volumes/*; diskutil unmountDisk /Volumes/*
+    echo "✅ Ejected all volumes."
+  else
+    echo "🙅‍♀️ Aborted."
+  fi
+}
+
 alias git-prune-branches="git checkout main && git branch --merged main | grep -v '^[ *]*main$' | xargs git branch -d"
 
 ## Utility command to make and move into a directory
@@ -85,7 +93,3 @@ source ~/.dotfiles/profile.local
 setopt EXTENDED_HISTORY
 # Prevent duplicates entries in ~/.zsh_history
 setopt HIST_IGNORE_ALL_DUPS
-
-# Load NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 

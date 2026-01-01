@@ -143,17 +143,15 @@ The WordPress autocomplete script is included in your profile, support requires 
 
 These are the commands that trigger simple scripts or series of commands to yield a specific outcome.
 
-|   Alias   |   Description     |
-|---    |---    |
-|   `bash-reload`    |   Refresh Shell and reload from ~/.profile with visual confirmation    |
-|   `bash-clear-history`    |   Clears bash history    |
-|   `zsh-clear-history`    |   Clears zsh history    |
-|   `pubkey`    |   Copy public key to keyboard    |
-|   `brewup`    |   Runs Homebrew updates, does housekeeping and reports on any vulnerable packages    |
-|   `npmup`    |   Updates NPM and global packages with before/after diff logging  |
-|   `nodeup`    |   Updates Node.js to LTS, and provides global package reinstall suggestions  |
-|   `eject-all`    |   Eject all devices    |
-|   `git-prune-branches`   |   Prunes (deletes) all local branches that have been merged into `main` after checking out the main branch. |
+| Alias                   | Description                                                               |
+|-------------------------|---------------------------------------------------------------------------|
+| `reload-profile`        | Reload shell from `~/.profile`                                            |
+| `clear-history`         | Clear Zsh history                                                         |
+| `brewup`                | Update Homebrew, run housekeeping, report vulnerable packages             |
+| `npmup`                 | Update NPM and global packages with before/after diff                     |
+| `nodeup`                | Update Node.js to LTS (using NVM) and suggest global package reinstalls   |
+| `eject-all`             | Eject all devices                                                         |
+| `git-prune-branches`    | Delete local branches merged into `main` after checkout                   |
 
 #### Shortcuts for Common Applications
 
