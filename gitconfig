@@ -52,3 +52,5 @@
 [include]
   # Include should always be last so local can override any config value.
   path = ~/.dotfiles/gitconfig.local
+[init]
+	defaultBranch = main
