@@ -40,17 +40,18 @@
 	process = git-lfs filter-process
 [user]
     # This key doesn't exist, causing commits to fail
-    # unless there's an appropriate override.
+    # The value should be set appropriately in the gitconfig.local file.
     signingkey = invalid-key-does-not-exist-00000000
-	name = terriann
-	email = terri.ann.s@gmail.com
+	name =
+	email =
 [commit]
-	# Force signing across all machines.
+	# Force signing by default.
 	gpgsign = true
 [gpg]
-	program = /usr/local/MacGPG2/bin/gpg2
+    # Use GPG2 by default.
+	program = gpg2
 [include]
-  # Include should always be last so local can override any config value.
+  # Use local gitconfig.local file for overrides that don't belong in the public repo.
   path = ~/.dotfiles/gitconfig.local
 [init]
 	defaultBranch = main

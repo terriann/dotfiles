@@ -103,23 +103,24 @@ The WordPress autocomplete script is included in your profile, support requires 
 
 #### Git Shortcuts
 
-| Alias   |  Command     |  Description                                             |
-|---------|--------------|----------------------------------------------------------|
-| `a`     |  `git a`     |  add files to repository                        |
-| `aa`    |  `git aa`    |  add all unstaged files to repository           |
-| `aliases`     |  `git aliases`     |  displays all available aliases         |
-| `amend`    |  `git amend`    |  amend your last commit with new message or additional staged changes           |
-| `br`    |  `git br`    |  branch                                        |
-| `ci`    |  `git ci`    |  commit all changed files `git commit -a`       |
-| `co`    |  `git co`    |  checkout                                   |
-| `curb`  |  `git curb` | shows the current branch |
-| `graph` |  `git graph` |  display a graph view of the recent git history |
-| `last`    |  `git last`    |  view last commit to branch                 |
-| `lg`    |  `git lg`    |  log that shows relative dates and files changed                                   |
-| `pushup` | `git pushup` | pushes the current branch to origin with upstream tracking   |
-| `reset`    |  `git reset`    |  reset a file back to it's HEAD state                                   |
-| `st`    |  `git st`    |  status                                   |
-| `unstage`    |  `git unstage`    |  unstages changes          |
+| Command         | Description                                                   |
+|-----------------|---------------------------------------------------------------|
+| `git a`         | Add files                                                     |
+| `git aa`        | Add all unstaged files                                        |
+| `git aliases`   | List available aliases                                        |
+| `git amend`     | Amend the last commit                                         |
+| `git br`        | Run `git branch`                                              |
+| `git ci`        | Commit all changes (`git commit -a`)                          |
+| `git co`        | Check out a branch                                            |
+| `git curb`      | Show the current branch                                       |
+| `git graph`     | Show recent history as a graph                                |
+| `git last`      | Show the last commit on the branch                            |
+| `git lg`        | Show log with relative dates and changed files                |
+| `git pushup`    | Push branch and set upstream                                  |
+| `git reset`     | Reset a file to HEAD                                          |
+| `git st`        | Show status                                                   |
+| `git unstage`   | Unstage changes                                               |
+
 
 ### Shell Aliases & Configurations
 
