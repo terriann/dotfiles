@@ -164,6 +164,7 @@ These are the commands that trigger simple scripts or series of commands to yiel
 |   `safari`    |    Open file (or current working directory) in Safari    |
 |   `finder`    |    Open file (or current working directory) in Finder    |
 |   `code`      |    Use methodology built into app. See <https://code.visualstudio.com/docs/setup/mac>     |
+|   `terminal`  |    Open current directory in a terminal window (handy inside Cursor/VS Code integrated terminal)     |
 
 #### Shortcuts for MacOS Configs and Settings
 

@@ -59,6 +59,7 @@ alias chrome="open -a Google\ Chrome"
 alias brave="open -a Brave\ Browser"
 alias safari="open -a Safari"
 alias finder="open ."
+alias terminal="open -a Terminal ."
 
 # MacOS related Aliases
 alias showdotfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
