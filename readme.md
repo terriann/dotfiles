@@ -84,6 +84,7 @@ Full list: run `git aliases`.
 | `ll`                   | List files with details and colors                       |
 | `ls`                   | List files in color, hide `.` and `..`                   |
 | `mkdir`                | Create directories as needed                             |
+| `mkcd`                 | Create directory and move into it                        |
 | `rmdropboxattr`        | Remove xattr dropbox attributes                          |
 | `stdchmod`             | Apply standard chmod (directories: 755, files: 644)      |
 | `unquarantine`         | Remove xattr quarantine                                  |
@@ -128,12 +129,12 @@ Open the current directory (or specified file) in common applications:
 
 ### Hot Corners Preset
 
-My preferred default Hot Corner settings (customizable in `setup/hotcorners.sh`):
+My preferred default MacOS Hot Corner settings (customizable in `setup/hotcorners.sh`):
 
-- Top-left: No action
-- Top-right: Launchpad
-- Bottom-left: Lock Screen
-- Bottom-right: Disable Screen Saver
+- **Top-left**: No action
+- **Top-right**: Launchpad
+- **Bottom-left**: Lock Screen
+- **Bottom-right**: Disable Screen Saver
 
 Script includes commented examples for other actions and modifier keys.
 
