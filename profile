@@ -56,13 +56,14 @@ export PROMPT='
 export RPROMPT="%F{yellow}[ %D{%f-%m-%y} %D{%L:%M:%S} ]"
 
 # Shortcuts for Common Applications
-alias sublime="open -a Sublime\ Text"
+alias affinity="open -a 'Affinity"
+alias brave="open -a Brave\ Browser"
+alias chrome="open -a Google\ Chrome"
+alias finder="open ."
 alias photoshop="open -a Adobe\ Photoshop\ CS"
 alias preview="open -a Preview"
-alias chrome="open -a Google\ Chrome"
-alias brave="open -a Brave\ Browser"
 alias safari="open -a Safari"
-alias finder="open ."
+alias sublime="open -a Sublime\ Text"
 alias terminal="open -a Terminal ."
 
 # MacOS related Aliases
