@@ -32,6 +32,7 @@ This is a repository of my MacOS dotfiles. Project is still a work in progress.
 - `.profile` bash/zsh profile
 - `.gitconfig` git configuration
 - `.gitignore_global` a global git ignore
+- `setup/hotcorners.sh` macOS hot corner preset script
 
 ## Prerequisites
 
@@ -83,6 +84,17 @@ Some sample local files are included, just rename the file to remove `.sample`
 ### Homebrew starter
 
 A setup file `/setup/brew.sh` will do a preliminary Homebrew setup. It includes a number of packages, commands, and helpful applications installed as casks.
+
+### Hot corners preset
+
+Run `bash ~/.dotfiles/setup/hotcorners.sh` to apply a macOS hot corner layout:
+
+- Top-left: No action
+- Top-right: Launchpad
+- Bottom-left: Lock Screen
+- Bottom-right: Disable Screen Saver
+
+The script restarts the Dock to take effect, so expect a brief flash.
 
 ## What's Inside
 
