@@ -30,9 +30,10 @@ defaults write com.apple.dock wvous-tl-modifier -int 0
 defaults write com.apple.dock wvous-tr-corner -int 11
 defaults write com.apple.dock wvous-tr-modifier -int 0
 
-# Set bottom-left corner to Lock Screen
+# Set bottom-left corner + Command(⌘) to Lock Screen
+# + Command so navigating to the unmute button in Zoom doesn't trigger the lock screen mid-meeting.
 defaults write com.apple.dock wvous-bl-corner -int 13
-defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.dock wvous-bl-modifier -int 1048576
 
 # Set bottom-right corner to Disable Screen Saver
 defaults write com.apple.dock wvous-br-corner -int 6
