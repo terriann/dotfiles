@@ -43,7 +43,7 @@ This is a repository of my MacOS dotfiles. Project is still a work in progress.
 Clone repo:
 
 ```bash
-git clone git://github.com/terriann/dotfiles.git ~/.dotfiles
+git clone git@github.com:terriann/dotfiles.git ~/.dotfiles
 ```
 
 (Or, [fork and clone](https://help.github.com/articles/syncing-a-fork/)).
