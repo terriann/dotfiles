@@ -41,11 +41,13 @@ link_curlrc() {
 # 1. Create local files, if not present
 touch ~/.dotfiles/gitconfig.local
 touch ~/.dotfiles/profile.local
+touch ~/.dotfiles/secrets.local
 
 # 2. Make symlinks
 link "gitconfig"
 link "profile"
 link "zshrc"
+link "zshenv"
 link_curlrc
 
 # 3. Have the terminal reload the profile
