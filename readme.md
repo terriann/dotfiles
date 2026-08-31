@@ -48,6 +48,31 @@ Example: `~/.dotfiles/gitconfig.local` is included by `.gitconfig` but won't be 
 
 Some sample local files are provided - just rename them to remove `.sample`.
 
+#### Secrets
+
+Most `.local` files (like `profile.local`) are sourced from `.zshrc`, so they
+only load in interactive shells. `secrets.local` is different: it's sourced by
+`zshenv` on **every** zsh invocation, including scripts and tools like Claude
+Code. Use it for API keys and tokens that must be available outside an
+interactive login shell.
+
+Copy the sample to get started:
+
+```bash
+cp ~/.dotfiles/secrets.local.sample ~/.dotfiles/secrets.local
+```
+
+The sample documents three ways to load a secret, from simplest to most secure:
+
+| Approach | How it works |
+| --- | --- |
+| **Plain export** | Values live as plaintext on disk. Simplest, least secure. |
+| **macOS Keychain** | Store once with `security add-generic-password`, then load with `security find-generic-password` at startup. |
+| **1Password CLI** | Read a field with `op read`, or inject vars per command with `op run` so nothing is written to disk. |
+
+`setup.sh` touches `secrets.local` and symlinks `zshenv` automatically, so the
+file exists and is sourced from a fresh clone.
+
 ### Git Shortcuts
 
 | Command         | Description                                                   |
