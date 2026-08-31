@@ -54,3 +54,5 @@ Thumbs.db
 # Ignore tests that are works in progress #
 ###########################################
 *test.js.broken
+
+**/.claude/settings.local.json
