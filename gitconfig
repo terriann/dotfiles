@@ -1,5 +1,5 @@
 [push]
-	default = matching
+	default = simple
 [core]
 	autocrlf = input
 	excludesfile = ~/.dotfiles/gitignore_global
