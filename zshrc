@@ -9,3 +9,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add ~/bin to PATH
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
