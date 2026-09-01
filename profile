@@ -87,6 +87,11 @@ alias ip2='curl -s "https://en.wordpress.com/whatismyip?" | awk "{print $1}"'
 ## Quick Access Projects
 alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfiles/dotfiles.code-workspace"
 
+# Load interactive-shell secrets, if present (see secrets.local.sample).
+# Static secrets for every shell — including non-interactive tools — belong in
+# ~/.zshenv instead; this file is only sourced from ~/.zshrc.
+[ -r ~/.dotfiles/secrets.local ] && source ~/.dotfiles/secrets.local
+
 # Load local settings/overrides, if present
 [ -r ~/.dotfiles/profile.local ] && source ~/.dotfiles/profile.local
 
