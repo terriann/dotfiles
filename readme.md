@@ -168,6 +168,8 @@ Open the current directory (or specified file) in common applications:
 
 **Screenshots**: saved to `~/Desktop/30 Day Retention/` instead of loose on the Desktop.
 
+**Trackpad gestures**: tap-to-click, two-finger secondary click, medium click pressure, three-finger swipes for Mission Control / App Exposé / full-screen apps, Notification Center edge swipe, and natural scrolling. Written to both the built-in and Magic Trackpad domains; a re-login may be needed for scroll-direction changes.
+
 ## Resources
 
 Resources that have been useful for setting up these configurations.
