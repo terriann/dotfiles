@@ -160,7 +160,7 @@ My preferred default MacOS Hot Corner settings (customizable in `setup/hotcorner
 
 - **Top-left**: No action
 - **Top-right**: Launchpad
-- **Bottom-left**: Lock Screen
+- **Bottom-left** + <kbd>⌘</kbd>: Lock Screen (the modifier prevents accidental locks)
 - **Bottom-right**: Disable Screen Saver
 
 Script includes commented examples for other actions and modifier keys.
