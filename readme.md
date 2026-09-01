@@ -10,7 +10,7 @@ Personal macOS dotfiles for streamlining shell configuration across machines. Fe
   - [Git Shortcuts](#git-shortcuts)
   - [Shell Shortcuts](#shell-shortcuts)
   - [Application Shortcuts](#application-shortcuts)
-  - [Hot Corners Preset](#hot-corners-preset)
+  - [macOS System Tweaks](#macos-system-tweaks)
 - [Resources](#resources)
 
 <!-- markdownlint-enable MD010 -->
@@ -33,8 +33,8 @@ bash ~/.dotfiles/setup.sh
 # Optional: Install Homebrew packages
 bash ~/.dotfiles/setup/brew.sh
 
-# Optional: Apply hot corner presets
-bash ~/.dotfiles/setup/hotcorners.sh
+# Optional: Apply macOS tweaks (hot corners, screenshots) - interactive
+bash ~/.dotfiles/setup/macos.sh
 
 # Restart your terminal
 ```
@@ -155,16 +155,18 @@ Open the current directory (or specified file) in common applications:
 | `sublime`    | Sublime Text          |
 | `terminal`   | New Terminal window   |
 
-### Hot Corners Preset
+### macOS System Tweaks
 
-My preferred default MacOS Hot Corner settings (customizable in `setup/hotcorners.sh`):
+`setup/macos.sh` applies opinionated system settings. Run it with no arguments to choose interactively (everything, or one class at a time), or pass a section name: `all`, `hotcorners`, `screenshots`, `gestures`.
+
+**Hot corners** - my defaults (the script carries the full action/modifier code reference for customizing):
 
 - **Top-left**: No action
 - **Top-right**: Launchpad
 - **Bottom-left** + <kbd>⌘</kbd>: Lock Screen (the modifier prevents accidental locks)
 - **Bottom-right**: Disable Screen Saver
 
-Script includes commented examples for other actions and modifier keys.
+**Screenshots**: saved to `~/Desktop/30 Day Retention/` instead of loose on the Desktop.
 
 ## Resources
 
