@@ -43,7 +43,7 @@ bash ~/.dotfiles/setup/hotcorners.sh
 
 ### Private local settings
 
-Keep sensitive data out of the public repo by creating `.local` files. The main configs automatically include these if they exist.
+Keep sensitive data out of the public repo by creating `.local` files. When a matching `.local` file is present the main config sources it; when it isn't, the config loads normally. (`setup.sh` pre-creates `profile.local` and `gitconfig.local`, so on a set-up machine they always exist.)
 
 Example: `~/.dotfiles/gitconfig.local` is included by `.gitconfig` but won't be committed.
 
