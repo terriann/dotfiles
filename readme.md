@@ -149,7 +149,7 @@ Open the current directory (or specified file) in common applications:
 | `brave`      | Brave Browser         |
 | `chrome`     | Google Chrome         |
 | `finder`     | Finder                |
-| `photoshop`  | Adobe Photoshop CS    |
+| `photoshop`  | Adobe Photoshop       |
 | `preview`    | Preview               |
 | `safari`     | Safari                |
 | `sublime`    | Sublime Text          |
