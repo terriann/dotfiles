@@ -43,7 +43,7 @@ bash ~/.dotfiles/setup/macos.sh
 
 ### Private local settings
 
-Keep sensitive data out of the public repo by creating `.local` files. When a matching `.local` file is present the main config sources it; when it isn't, the config loads normally. (`setup.sh` pre-creates `profile.local` and `gitconfig.local`, so on a set-up machine they always exist.)
+Keep machine-specific or sensitive values out of the public repo by putting them in a `.local` file that git ignores. Each main config loads its `.local` sibling when it exists and carries on without it when it doesn't. (`setup.sh` pre-creates `profile.local` and `gitconfig.local`, and seeds `zshenv.local` from `zshenv.sample`, so on a set-up machine they always exist.)
 
 Example: `~/.dotfiles/gitconfig.local` is included by `.gitconfig` but won't be committed.
 
@@ -51,28 +51,35 @@ Some sample local files are provided - just rename them to remove `.sample`.
 
 #### Secrets
 
-Most `.local` files (like `profile.local`) are sourced from `.zshrc`, so they
-only load in interactive shells. `secrets.local` is different: it's sourced by
-`zshenv` on **every** zsh invocation, including scripts and tools like Claude
-Code. Use it for API keys and tokens that must be available outside an
-interactive login shell.
+There are two places for credentials, depending on which shells need them.
 
-Copy the sample to get started:
+**`~/.zshenv` — for every shell, including non-interactive tools.** zsh reads
+`.zshenv` on *every* invocation, so keys defined here also reach `zsh -c`,
+scripts, cron, and tools like Claude Code. `setup.sh` seeds `zshenv.local`
+from `zshenv.sample`, `chmod 600`s it, and symlinks it to `~/.zshenv`; it's
+gitignored (`*.local`), so edit `~/.dotfiles/zshenv.local` directly. Because it
+runs on every shell — before `PATH` is set up — it must stay **silent** (stray
+stdout breaks `scp`/`rsync`/`sftp` to a zsh host) and **fast / PATH-independent**.
+Use it for plain `export`s or macOS Keychain lookups (`security` is always on
+`PATH`); `op` is *not* available this early.
+
+**`secrets.local` — for interactive shells only.** Sourced late from `profile`
+(so, via `.zshrc`), after `PATH` is fully set up. This is where `op`-backed
+secrets, prompts, and anything slow belong. It's opt-in — copy the sample when
+you want it:
 
 ```bash
 cp ~/.dotfiles/secrets.local.sample ~/.dotfiles/secrets.local
+chmod 600 ~/.dotfiles/secrets.local
 ```
 
-The sample documents three ways to load a secret, from simplest to most secure:
+Keeping it separate from `profile.local` is just tidiness: `profile.local` is
+machine config, `secrets.local` is credentials. Both `zshenv.sample` and
+`secrets.local.sample` carry copy-paste snippets (plain `export`, Keychain, and
+— in `secrets.local` — 1Password).
 
-| Approach | How it works |
-| --- | --- |
-| **Plain export** | Values live as plaintext on disk. Simplest, least secure. |
-| **macOS Keychain** | Store once with `security add-generic-password`, then load with `security find-generic-password` at startup. |
-| **1Password CLI** | Read a field with `op read`, or inject vars per command with `op run` so nothing is written to disk. |
-
-`setup.sh` touches `secrets.local` and symlinks `zshenv` automatically, so the
-file exists and is sourced from a fresh clone.
+`.zshenv` loads first, then `secrets.local`, then `profile.local`; a value set
+later wins. Set each secret in one place only.
 
 ### Git Shortcuts
 
