@@ -21,11 +21,22 @@ link() {
     local dest="$HOME/.$name"
     local src="$HOME/.dotfiles/$target"
 
-    echo "Linking $dest to $src"
-
-    if [ ! -h "$dest" ]; then
-        ln -s "$src" "$dest"
+    # Already the correct symlink — nothing to do.
+    if [ -L "$dest" ] && [ "$(readlink "$dest")" = "$src" ]; then
+        echo "✔ $dest already links to $src"
+        return 0
     fi
+
+    # A real file, directory, or a symlink pointing elsewhere is in the way.
+    # Don't clobber it — tell the user and move on.
+    if [ -e "$dest" ] || [ -L "$dest" ]; then
+        echo "⚠ $dest already exists and is not a link to $src — skipping."
+        echo "  Move or remove it, then re-run this script to link $src."
+        return 1
+    fi
+
+    echo "Linking $dest → $src"
+    ln -s "$src" "$dest"
 }
 
 link_curlrc() {
