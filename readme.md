@@ -133,8 +133,10 @@ Full list: run `git aliases`.
 | `npmup`                | Update NPM and global packages                           |
 | **System Utilities**   |                                                          |
 | `clear-history`        | Clear zsh history                                        |
+| `dotfiles`             | Open the dotfiles repo workspace in VS Code              |
 | `ps`                   | Show all processes                                       |
 | `reload-profile`       | Reload shell configuration                               |
+| `utctime`              | Show the current time in UTC                             |
 
 ### Application Shortcuts
 
