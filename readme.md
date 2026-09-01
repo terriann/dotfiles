@@ -6,6 +6,7 @@ Personal macOS dotfiles for streamlining shell configuration across machines. Fe
 - [Quick Start](#quick-start)
 - [Features](#features)
   - [Private local settings](#private-local-settings)
+    - [Secrets](#secrets)
   - [Git Shortcuts](#git-shortcuts)
   - [Shell Shortcuts](#shell-shortcuts)
   - [Application Shortcuts](#application-shortcuts)
