@@ -90,8 +90,10 @@ alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfile
 # Load local settings/overrides, if present
 [ -r ~/.dotfiles/profile.local ] && source ~/.dotfiles/profile.local
 
-# Adds timestamp to ~/.zsh_history
-# Ex: history -E -15
-setopt EXTENDED_HISTORY
-# Prevent duplicates entries in ~/.zsh_history
-setopt HIST_IGNORE_ALL_DUPS
+# zsh history tuning (skipped when this file is sourced from bash, e.g. setup.sh)
+if [ -n "$ZSH_VERSION" ]; then
+  # Add a timestamp to each ~/.zsh_history entry (view with: history -E -15)
+  setopt EXTENDED_HISTORY
+  # Drop older duplicates from ~/.zsh_history
+  setopt HIST_IGNORE_ALL_DUPS
+fi
