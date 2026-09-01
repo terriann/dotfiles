@@ -79,7 +79,7 @@ file exists and is sourced from a fresh clone.
 | Command         | Description                                                   |
 |-----------------|---------------------------------------------------------------|
 | `git a`         | Add files                                                     |
-| `git aa`        | Add all unstaged files                                        |
+| `git aa`        | Stage all changes                                            |
 | `git aliases`   | List available aliases                                        |
 | `git amend`     | Amend the last commit                                         |
 | `git br`        | Run `git branch`                                              |
