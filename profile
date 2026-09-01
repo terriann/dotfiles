@@ -56,7 +56,7 @@ export PROMPT='
 export RPROMPT="%F{yellow}[ %D{%f-%m-%y} %D{%L:%M:%S} ]"
 
 # Shortcuts for Common Applications
-alias affinity="open -a 'Affinity"
+alias affinity="open -a Affinity"
 alias brave="open -a Brave\ Browser"
 alias chrome="open -a Google\ Chrome"
 alias finder="open ."
