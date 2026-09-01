@@ -90,7 +90,7 @@ file exists and is sourced from a fresh clone.
 | `git last`      | Show the last commit on the branch                            |
 | `git lg`        | Show log with relative dates and changed files                |
 | `git pushup`    | Push branch and set upstream                                  |
-| `git reset`     | Reset a file to HEAD                                          |
+| `git reset`     | Discard unstaged changes to a file                            |
 | `git st`        | Show status                                                   |
 | `git unstage`   | Unstage changes                                               |
 
