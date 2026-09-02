@@ -27,7 +27,7 @@ Personal macOS dotfiles for streamlining shell configuration across machines. Fe
 # Clone the repo
 git clone git@github.com:terriann/dotfiles.git ~/.dotfiles
 
-# Run setup to create symlinks
+# Run setup: symlinks, local-file stubs, silence the login banner
 bash ~/.dotfiles/setup.sh
 
 # Optional: Install Homebrew packages
