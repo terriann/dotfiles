@@ -57,11 +57,6 @@ export PROMPT='
 %F{magenta}%n%f:%F{cyan}%m%f %B%F{240}%~%f%b
 %(?.%F{green}√.%F{red}X)%f $ '
 
-# Date time in the right of the prompt
-# @link https://gist.github.com/zulhfreelancer/9c410cad5efa9c5f7c74cd0849765865
-# @todo - Make UTC instead of local. Accepting PRs
-export RPROMPT="%F{yellow}[ %D{%f-%m-%y} %D{%L:%M:%S} ]"
-
 # Shortcuts for Common Applications
 alias affinity="open -a Affinity"
 alias brave="open -a Brave\ Browser"
