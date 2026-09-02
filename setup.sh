@@ -75,11 +75,16 @@ link "zshrc"
 link_zshenv
 link_curlrc
 
-# 3. Have the terminal reload the profile
+# 3. Silence the "Last login:" banner in new terminal windows.
+#    login(1) only checks whether ~/.hushlogin exists; its contents are ignored,
+#    so there's nothing to track in the repo — just create it here.
+touch ~/.hushlogin
+
+# 4. Have the terminal reload the profile
 source ~/.profile
 printf '=> Profile reset.\n'
 
-# 4. Re-surface anything that couldn't be linked, so it isn't lost in the scroll
+# 5. Re-surface anything that couldn't be linked, so it isn't lost in the scroll
 if [ "${#SKIPPED_LINKS[@]}" -gt 0 ]; then
     printf '\n⚠ %d symlink(s) skipped because the destination already exists:\n' "${#SKIPPED_LINKS[@]}"
     for entry in "${SKIPPED_LINKS[@]}"; do
