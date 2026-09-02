@@ -56,13 +56,15 @@ export PROMPT='
 export RPROMPT="%F{yellow}[ %D{%f-%m-%y} %D{%L:%M:%S} ]"
 
 # Shortcuts for Common Applications
-alias sublime="open -a Sublime\ Text"
-alias photoshop="open -a Adobe\ Photoshop\ CS"
-alias preview="open -a Preview"
-alias chrome="open -a Google\ Chrome"
+alias affinity="open -a Affinity"
 alias brave="open -a Brave\ Browser"
-alias safari="open -a Safari"
+alias chrome="open -a Google\ Chrome"
 alias finder="open ."
+# Launch by bundle ID so the alias survives Photoshop's yearly rename (…CS, …2026, …).
+alias photoshop="open -b com.adobe.Photoshop"
+alias preview="open -a Preview"
+alias safari="open -a Safari"
+alias sublime="open -a Sublime\ Text"
 alias terminal="open -a Terminal ."
 
 # MacOS related Aliases
@@ -85,11 +87,18 @@ alias ip2='curl -s "https://en.wordpress.com/whatismyip?" | awk "{print $1}"'
 ## Quick Access Projects
 alias dotfiles="print \"Opening dotfiles directory in VS code\"; code ~/.dotfiles/dotfiles.code-workspace"
 
-# Load local settings/overrides
-source ~/.dotfiles/profile.local
+# Load interactive-shell secrets, if present (see secrets.local.sample).
+# Static secrets for every shell — including non-interactive tools — belong in
+# ~/.zshenv instead; this file is only sourced from ~/.zshrc.
+[ -r ~/.dotfiles/secrets.local ] && source ~/.dotfiles/secrets.local
 
-# Adds timestamp to ~/.zsh_history
-# Ex: history -E -15
-setopt EXTENDED_HISTORY
-# Prevent duplicates entries in ~/.zsh_history
-setopt HIST_IGNORE_ALL_DUPS
+# Load local settings/overrides, if present
+[ -r ~/.dotfiles/profile.local ] && source ~/.dotfiles/profile.local
+
+# zsh history tuning (skipped when this file is sourced from bash, e.g. setup.sh)
+if [ -n "$ZSH_VERSION" ]; then
+  # Add a timestamp to each ~/.zsh_history entry (view with: history -E -15)
+  setopt EXTENDED_HISTORY
+  # Drop older duplicates from ~/.zsh_history
+  setopt HIST_IGNORE_ALL_DUPS
+fi

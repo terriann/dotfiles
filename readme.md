@@ -1,101 +1,92 @@
 # Terri's Dotfiles
 
+Personal macOS dotfiles for streamlining shell configuration across machines. Feel free to fork and adapt.
+
 <!-- markdownlint-disable MD010 MD007 -->
-- [Files include](#files-include)
-- [Prerequisites](#prerequisites)
-- [Install](#install)
-  - [ZSH Conversion](#zsh-conversion)
+- [Quick Start](#quick-start)
 - [Features](#features)
   - [Private local settings](#private-local-settings)
-  - [Homebrew starter](#homebrew-starter)
-- [What's Inside](#whats-inside)
-  - [git Configuration](#git-configuration)
-    - [Git Shortcuts](#git-shortcuts)
-  - [Shell Aliases \& Configurations](#shell-aliases--configurations)
-    - [Shell Shortcuts](#shell-shortcuts)
-    - [Utility Mini-scripts](#utility-mini-scripts)
-    - [Shortcuts for Common Applications](#shortcuts-for-common-applications)
-    - [Shortcuts for MacOS Configs and Settings](#shortcuts-for-macos-configs-and-settings)
-    - [Networking Shortcuts](#networking-shortcuts)
-- [Troubleshooting](#troubleshooting)
-- [Changelog](#changelog)
+    - [Secrets](#secrets)
+  - [Git Shortcuts](#git-shortcuts)
+  - [Shell Shortcuts](#shell-shortcuts)
+  - [Application Shortcuts](#application-shortcuts)
+  - [macOS System Tweaks](#macos-system-tweaks)
 - [Resources](#resources)
-  - [Homebrew](#homebrew)
-  - [Bash, Shell \& Terminal Resources](#bash-shell--terminal-resources)
 
 <!-- markdownlint-enable MD010 -->
+## Quick Start
 
-This is a repository of my MacOS dotfiles. Project is still a work in progress.
+**Prerequisites:**
 
-## Files include
+- macOS with zsh as your login shell
+- [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm) installed
 
-- `.profile` bash/zsh profile
-- `.gitconfig` git configuration
-- `.gitignore_global` a global git ignore
-
-## Prerequisites
-
-- Set zsh as your login shell.
-- Install [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm) to manage Node.js and NPM versions.
-
-## Install
-
-Clone repo:
+**Installation:**
 
 ```bash
+# Clone the repo
 git clone git@github.com:terriann/dotfiles.git ~/.dotfiles
-```
 
-(Or, [fork and clone](https://help.github.com/articles/syncing-a-fork/)).
-
-Install the dotfiles:
-
-```bash
+# Run setup to create symlinks
 bash ~/.dotfiles/setup.sh
-```
 
-If using the base Homebrew setup also run this script:
-
-```bash
+# Optional: Install Homebrew packages
 bash ~/.dotfiles/setup/brew.sh
+
+# Optional: Apply macOS tweaks (hot corners, screenshots) - interactive
+bash ~/.dotfiles/setup/macos.sh
+
+# Restart your terminal
 ```
-
-This command will create symlinks for config files in your home directory.
-
-You will need to restart your terminal in order to make use of the changes.
-
-### ZSH Conversion
-
-You may need to add the following line to your `~/.zshrc` in order for the aliases and settings to apply.
-
- [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
 ## Features
 
 ### Private local settings
 
-Create a .local copy of setting you don't want to publish. The configs will give higher precedence to private local settings named with a .local filename extension.
+Keep machine-specific or sensitive values out of the public repo by putting them in a `.local` file that git ignores. Each main config loads its `.local` sibling when it exists and carries on without it when it doesn't. (`setup.sh` pre-creates `profile.local` and `gitconfig.local`, and seeds `zshenv.local` from `zshenv.sample`, so on a set-up machine they always exist.)
 
-ex. `~/.dotfiles/<<CONFIG>>.local`
+Example: `~/.dotfiles/gitconfig.local` is included by `.gitconfig` but won't be committed.
 
-Some sample local files are included, just rename the file to remove `.sample`
+Some sample local files are provided - just rename them to remove `.sample`.
 
-### Homebrew starter
+#### Secrets
 
-A setup file `/setup/brew.sh` will do a preliminary Homebrew setup. It includes a number of packages, commands, and helpful applications installed as casks.
+There are two places for credentials, depending on which shells need them.
 
-## What's Inside
+**`~/.zshenv` — for every shell, including non-interactive tools.** zsh reads
+`.zshenv` on *every* invocation, so keys defined here also reach `zsh -c`,
+scripts, cron, and tools like Claude Code. `setup.sh` seeds `zshenv.local`
+from `zshenv.sample`, `chmod 600`s it, and symlinks it to `~/.zshenv`; it's
+gitignored (`*.local`), so edit `~/.dotfiles/zshenv.local` directly. Because it
+runs on every shell — before `PATH` is set up — it must stay **silent** (stray
+stdout breaks `scp`/`rsync`/`sftp` to a zsh host) and **fast / PATH-independent**.
+Use it for plain `export`s or macOS Keychain lookups (`security` is always on
+`PATH`); `op` is *not* available this early.
 
-### [git](http://git-scm.com/) Configuration
+**`secrets.local` — for interactive shells only.** Sourced late from `profile`
+(so, via `.zshrc`), after `PATH` is fully set up. This is where `op`-backed
+secrets, prompts, and anything slow belong. It's opt-in — copy the sample when
+you want it:
 
-- Enables git shell colors
+```bash
+cp ~/.dotfiles/secrets.local.sample ~/.dotfiles/secrets.local
+chmod 600 ~/.dotfiles/secrets.local
+```
 
-#### Git Shortcuts
+Keeping it separate from `profile.local` is just tidiness: `profile.local` is
+machine config, `secrets.local` is credentials. Both `zshenv.sample` and
+`secrets.local.sample` carry copy-paste snippets (plain `export`, Keychain, and
+— in `secrets.local` — 1Password).
+
+`.zshenv` loads first, then `secrets.local`, then `profile.local`; a value set
+later wins. Set each secret in one place only.
+
+### Git Shortcuts
 
 | Command         | Description                                                   |
 |-----------------|---------------------------------------------------------------|
 | `git a`         | Add files                                                     |
-| `git aa`        | Add all unstaged files                                        |
+| `git aa`        | Stage all changes                                            |
 | `git aliases`   | List available aliases                                        |
 | `git amend`     | Amend the last commit                                         |
 | `git br`        | Run `git branch`                                              |
@@ -106,91 +97,92 @@ A setup file `/setup/brew.sh` will do a preliminary Homebrew setup. It includes 
 | `git last`      | Show the last commit on the branch                            |
 | `git lg`        | Show log with relative dates and changed files                |
 | `git pushup`    | Push branch and set upstream                                  |
-| `git reset`     | Reset a file to HEAD                                          |
+| `git reset`     | Discard unstaged changes to a file                            |
 | `git st`        | Show status                                                   |
 | `git unstage`   | Unstage changes                                               |
 
-### Shell Aliases & Configurations
+Full list: run `git aliases`.
 
-#### Shell Shortcuts
+### Shell Shortcuts
 
-| Command       | Description                                                   |
-|---------------|---------------------------------------------------------------|
-| `..`          | Go up one directory                                           |
-| `...`         | Go up two directories                                         |
-| `~`           | Go to home directory                                          |
-| `mkdir`       | Create directories as needed (no error if they exist)         |
-| `ll`          | List files verbosely with human-readable sizes and colors     |
-| `ls`          | List files in color, hide `.` and `..`                        |
-| `grep`        | Highlight matches in color                                    |
-| `ps`          | Show all processes                                            |
-| `catn`        | Display file contents with line numbers                       |
+| Command                | Description                                              |
+| ---------------------- | -------------------------------------------------------- |
+| **Navigation**         |                                                          |
+| `..`                   | Go up one directory                                      |
+| `...`                  | Go up two directories                                    |
+| `~`                    | Go to home directory                                     |
+| **File Operations**    |                                                          |
+| `catn`                 | Display file with line numbers                           |
+| `grep`                 | Highlight matches in color                               |
+| `ll`                   | List files with details and colors                       |
+| `ls`                   | List files in color, hide `.` and `..`                   |
+| `mkdir`                | Create directories as needed                             |
+| `mkcd`                 | Create directory and move into it                        |
+| `rmdropboxattr`        | Remove xattr dropbox attributes                          |
+| `stdchmod`             | Apply standard chmod (directories: 755, files: 644)      |
+| `unquarantine`         | Remove xattr quarantine                                  |
+| **Git Utilities**      |                                                          |
+| `git-prune-branches`   | Delete merged local branches                             |
+| **Hardware**           |                                                          |
+| `eject-all`            | Eject all devices                                        |
+| **macOS Display**      |                                                          |
+| `hidedeskicons`        | Hide desktop icons                                       |
+| `hidedotfiles`         | Hide dotfiles throughout OS                              |
+| `showdeskicons`        | Show desktop icons                                       |
+| `showdotfiles`         | Show dotfiles throughout OS                              |
+| **Networking**         |                                                          |
+| `flushdns`             | Flush DNS cache                                          |
+| `ip`                   | Show local IP addresses                                  |
+| `ip1`                  | Show all IP addresses (detailed)                         |
+| `ip2`                  | Show external IP address                                 |
+| **Package Management** |                                                          |
+| `brewup`               | Update Homebrew and packages                             |
+| `nodeup`               | Update Node.js to LTS via NVM                            |
+| `npmup`                | Update NPM and global packages                           |
+| **System Utilities**   |                                                          |
+| `clear-history`        | Clear zsh history                                        |
+| `dotfiles`             | Open the dotfiles repo workspace in VS Code              |
+| `ps`                   | Show all processes                                       |
+| `reload-profile`       | Reload shell configuration                               |
+| `utctime`              | Show the current time in UTC                             |
 
-#### Utility Mini-scripts
+### Application Shortcuts
 
-These are the commands that trigger simple scripts or series of commands to yield a specific outcome.
+Open the current directory (or specified file) in common applications:
 
-| Alias                   | Description                                                               |
-|-------------------------|---------------------------------------------------------------------------|
-| `reload-profile`        | Reload shell from `~/.profile`                                            |
-| `clear-history`         | Clear Zsh history                                                         |
-| `brewup`                | Update Homebrew, run housekeeping, report vulnerable packages             |
-| `npmup`                 | Update NPM and global packages with before/after diff                     |
-| `nodeup`                | Update Node.js to LTS (using NVM) and suggest global package reinstalls   |
-| `eject-all`             | Eject all devices                                                         |
-| `git-prune-branches`    | Delete local branches merged into `main` after checkout                   |
+| Command      | Application           |
+| ------------ | --------------------- |
+| `affinity`   | Affinity              |
+| `brave`      | Brave Browser         |
+| `chrome`     | Google Chrome         |
+| `finder`     | Finder                |
+| `photoshop`  | Adobe Photoshop       |
+| `preview`    | Preview               |
+| `safari`     | Safari                |
+| `sublime`    | Sublime Text          |
+| `terminal`   | New Terminal window   |
 
-#### Shortcuts for Common Applications
+### macOS System Tweaks
 
-|   Alias   |   Description     |
-|---    |---    |
-|   `sublime`    |    Open file (or current working directory) in Sublime Text    |
-|   `photoshop`    |    Open file (or current working directory) in Adobe Photoshop CS    |
-|   `preview`    |    Open file (or current working directory) in Preview    |
-|   `chrome`    |    Open file (or current working directory) in Google Chrome    |
-|   `brave`    |    Open file (or current working directory) in Brave Browser    |
-|   `safari`    |    Open file (or current working directory) in Safari    |
-|   `finder`    |    Open file (or current working directory) in Finder    |
-|   `code`      |    Use methodology built into app. See <https://code.visualstudio.com/docs/setup/mac>     |
-|   `terminal`  |    Open current directory in a terminal window (handy inside Cursor/VS Code integrated terminal)     |
+`setup/macos.sh` applies opinionated system settings. Run it with no arguments to choose interactively (everything, or one class at a time), or pass a section name: `all`, `hotcorners`, `screenshots`, `gestures`.
 
-#### Shortcuts for MacOS Configs and Settings
+**Hot corners** - my defaults (the script carries the full action/modifier code reference for customizing):
 
-|   Alias   | Description   |
-|---     |---    |
-|   `showdotfiles`    |   Make `*.` files visible throughout OS   |
-|   `hidedotfiles`    |   Make `*.` files hidden throughout OS   |
-|   `hidedeskicons`    |   Hide icons on desktop (good for presenting)   |
-|   `showdeskicons`    |   Show icons on desktop   |
-|   `unquarantine`    |   Removed xattr quarantine   |
-|   `rmdropboxattr`    |   Removed xattr dropbox attributes   |
-|   `stdchmod`    |   Applies standard chmod settings for directories (755) and files (644)   |
+- **Top-left**: No action
+- **Top-right**: Launchpad
+- **Bottom-left** + <kbd>⌘</kbd>: Lock Screen (the modifier prevents accidental locks)
+- **Bottom-right**: Disable Screen Saver
 
-#### Networking Shortcuts
+**Screenshots**: saved to `~/Desktop/30 Day Retention/` instead of loose on the Desktop.
 
-|   Alias    | Command      | Description   |
-|---    |---    |---    |
-|   `flushdns`    |   `dscacheutil -flushcache`    |   Flush DNS    |
-|   `ip`    |   `ifconfig \| grep "inet " \| grep -v 127.0.0.1`    |   Simple IP information output    |
-|   `ip1`    |   `ifconfig -a \| perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'`    |   More detailed IP information output    |
-|   `ip2`    |   `curl -s "https://en.wordpress.com/whatismyip?" \| awk "{print $1}"`    |   External IP information output    |
-
-## Troubleshooting
-
-**Getting a prompt for Github username and password but I setup key:**
-
-Check this article to test your connection and authorize the key:
-[Testing your SSH connection](https://help.github.com/articles/testing-your-ssh-connection/)
-
-## Changelog
+**Trackpad gestures**: tap-to-click, two-finger secondary click, medium click pressure, three-finger swipes for Mission Control / App Exposé / full-screen apps, Notification Center edge swipe, and natural scrolling. Written to both the built-in and Magic Trackpad domains; a re-login may be needed for scroll-direction changes.
 
 ## Resources
 
-Some of the resources I used and found while setting up configurations
+Resources that have been useful for setting up these configurations.
 
-- [Customize Your Shell & Command Prompt](http://blog.taylormcgann.com/2012/06/13/customize-your-shell-command-prompt/) - June 2012
-- [How to Make a Fancy and Useful Bash Prompt in Linux](https://www.linux.com/learn/how-make-fancy-and-useful-bash-prompt-linux) - May 2014
-- [Git Basics - Git Aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases) - Documentation
+- [Customize Your Shell & Command Prompt](http://blog.taylormcgann.com/2012/06/13/customize-your-shell-command-prompt/)
+- [How to Make a Fancy and Useful Bash Prompt in Linux](https://www.linux.com/learn/how-make-fancy-and-useful-bash-prompt-linux)
 - [Github thoughtbot/dotfiles Repo](https://github.com/thoughtbot/dotfiles)
 - [Github yanyaoer/dotfile Repo](https://github.com/yanyaoer/dotfile/blob/master/runme.sh)
 - [Github holman/dotfile Repo](https://github.com/holman/dotfiles)
@@ -201,13 +193,12 @@ Some of the resources I used and found while setting up configurations
 - [/paulmillr/dotfiles](https://github.com/paulmillr/dotfiles)
 - [Dotfile inspiration](https://dotfiles.github.io/inspiration/)
 
-### Homebrew
+**Homebrew:**
 
 - [How to and Best of Homebrew - gist indiesquidge/homebrew.md](https://gist.github.com/indiesquidge/ec010eca3ffa254788c2)
 - [Install most of my Apps with homebrew & cask](https://gist.github.com/t-io/8255711)
 
-### Bash, Shell & Terminal Resources
+**Bash, Shell & Terminal Resources:**
 
-- [How can I list and edit all defined aliases in Terminal? - stackoverflow](https://apple.stackexchange.com/questions/25352/how-can-i-list-and-edit-all-defined-aliases-in-terminal) - good for when you've taken your configuration too far down the rabbit hole and months later need to crawl back out.
-- [The macOS School of Terminal Witchcraft and Wizardry - Armin Briegel](https://www.youtube.com/watch?v=GMqj90jDCbE) - Excellent presentation with LOADS of Terminal efficiency tips. Definitely worth a watch
-- [Better zsh history](https://www.soberkoder.com/better-zsh-history/)
+- [How can I list and edit all defined aliases in Terminal? - stackoverflow](https://apple.stackexchange.com/questions/25352/how-can-i-list-and-edit-all-defined-aliases-in-terminal)
+- [The macOS School of Terminal Witchcraft and Wizardry - Armin Briegel](https://www.youtube.com/watch?v=GMqj90jDCbE)
