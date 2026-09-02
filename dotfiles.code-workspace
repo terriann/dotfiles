@@ -4,5 +4,82 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"extensions": {
+		"recommendations": [
+			"editorconfig.editorconfig",
+			"streetsidesoftware.code-spell-checker",
+			"davidanson.vscode-markdownlint",
+			"yzhang.markdown-all-in-one",
+			"timonwong.shellcheck"
+		]
+	},
+	"settings": {
+		"cSpell.words": [
+			"Armin",
+			"autoload",
+			"bashcompinit",
+			"brewup",
+			"Briegel",
+			"catn",
+			"compinit",
+			"dscacheutil",
+			"flushcache",
+			"flushdns",
+			"gitignored",
+			"hidedeskicons",
+			"hidedotfiles",
+			"histt",
+			"hotcorners",
+			"hushlogin",
+			"indiesquidge",
+			"inet",
+			"markdownlint",
+			"nodeup",
+			"npmup",
+			"nvm",
+			"octocat",
+			"paulmillr",
+			"Photoshop",
+			"pubkey",
+			"rmdropboxattr",
+			"setopt",
+			"shellcheck",
+			"showdeskicons",
+			"showdotfiles",
+			"Stackoverflow",
+			"stdchmod",
+			"symlinked",
+			"symlinks",
+			"thoughtbot",
+			"unquarantine",
+			"xattr",
+			"yanyaoer",
+			"ymendel",
+			"zshenv",
+			"zshrc",
+			"zstyle"
+		],
+		"cSpell.ignoreRegExpList": ["unstage[ds]?", "dotfile[s]?"],
+		"files.associations": {
+			"gitconfig": "properties",
+			"gitconfig.local": "properties",
+			"gitconfig.local.sample": "properties",
+			"gitconfig.personal.local": "properties",
+			"gitconfig.work.local": "properties",
+			"gitignore_global": "ignore",
+			"curlrc.sample": "properties",
+			"curlrc.local": "properties",
+			"profile": "shellscript",
+			"profile.local": "shellscript",
+			"profile.local.sample": "shellscript",
+			"zshrc": "shellscript",
+			"zshenv.sample": "shellscript",
+			"zshenv.local": "shellscript",
+			"secrets.local": "shellscript",
+			"secrets.local.sample": "shellscript"
+		},
+		"markdown.extension.toc.levels": "2..5",
+		"markdown.extension.toc.unorderedList.marker": "-",
+		"markdown.extension.tableFormatter.normalizeIndentation": false
+	}
 }
