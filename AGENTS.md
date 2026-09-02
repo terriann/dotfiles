@@ -136,7 +136,6 @@ shebang and bash style; that's a deliberate habit, not an accident to "fix".
 | `setup/macos.sh` | Opinionated macOS defaults — hot corners, screenshots, trackpad gestures. Interactive or by section arg. Safe to re-run. |
 | `setup/brew.sh` | Homebrew + cask install list (somewhat stale — review before trusting). |
 | `scripts/` | Helpers behind the `npmup` / `nodeup` aliases. |
-| `includes/` | Extra sourced snippets (e.g. wp-cli completion). |
 | `*.sample` | Tracked templates for the untracked `*.local` files. |
 | `backup/`, `logs/` | Generated at runtime — do not touch. |
 
