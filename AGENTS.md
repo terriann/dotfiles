@@ -88,8 +88,14 @@ shebang and bash style; that's a deliberate habit, not an accident to "fix".
 
 - **Commits:** Conventional Commits, matching history —
   `type(scope): summary` (`feat`, `fix`, `docs`, `chore`; scopes like `profile`,
-  `setup`, `readme`, `git`). Imperative, lower-case summary.
+  `setup`, `readme`, `git`). Imperative, lower-case summary. Wrap the body at
+  ~72 columns (git tooling does not reflow it).
 - **Branch → PR:** feature branch, PR to `main`.
+- **PR / issue text:** GitHub renders every newline in a comment body as a
+  line break, so do **not** hard-wrap prose there — one physical line per
+  paragraph, a blank line between paragraphs, and let it soft-wrap. (Repo
+  files like `readme.md` are the opposite: standard CommonMark, so wrapping
+  is fine. Commit messages are also the opposite — see above.)
 - **Style:** `.editorconfig` governs — 4-space indent, LF, trim trailing
   whitespace, final newline; Markdown uses 2-space indent. Match the
   surrounding file.
