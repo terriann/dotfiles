@@ -142,6 +142,7 @@ Full list: run `git aliases`.
 | **System Utilities**   |                                                          |
 | `clear-history`        | Clear zsh history                                        |
 | `dotfiles`             | Open the dotfiles repo workspace in VS Code              |
+| `histt`                | Recent history: start time (local) + run duration per command |
 | `ps`                   | Show all processes                                       |
 | `reload-profile`       | Reload shell configuration                               |
 | `utctime`              | Show the current time in UTC                             |

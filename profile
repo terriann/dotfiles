@@ -15,6 +15,13 @@ alias catn="cat -n"
 # Utility Mini-scripts
 alias reload-profile="source ~/.profile && printf '=> Terminal profile reset.\n'"
 alias clear-history="read -q 'REPLY?Are you sure you want to clear history? [y/N] ' && [[ $REPLY == [yY] ]] && cat /dev/null > $HISTFILE && history -p && exit"
+# Recent history, one row per command:
+#   <event#>  <weekday date time>  <elapsed m:ss>  <command>
+# Times are LOCAL (the history file stores UTC epochs; fc renders them local).
+# Re-run an entry by its event number with '!<n>'.
+# Needs EXTENDED_HISTORY (set below) for the time and elapsed columns.
+# 'histt' = last 16; 'histt -100' = last 100; 'histt 1' = everything.
+alias histt="fc -l -D -t '%a %Y-%m-%d %H:%M:%S'"
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias npmup='bash ~/.dotfiles/scripts/npm-packages.sh before && nvm install-latest-npm  && npm update -g && bash ~/.dotfiles/scripts/npm-packages.sh after'
 alias nodeup='source ~/.dotfiles/scripts/nvm-update.sh'
@@ -49,11 +56,6 @@ if [ -n "$SSH_CLIENT" ]; then text=" ssh-session"; fi
 export PROMPT='
 %F{magenta}%n%f:%F{cyan}%m%f %B%F{240}%~%f%b
 %(?.%F{green}√.%F{red}X)%f $ '
-
-# Date time in the right of the prompt
-# @link https://gist.github.com/zulhfreelancer/9c410cad5efa9c5f7c74cd0849765865
-# @todo - Make UTC instead of local. Accepting PRs
-export RPROMPT="%F{yellow}[ %D{%f-%m-%y} %D{%L:%M:%S} ]"
 
 # Shortcuts for Common Applications
 alias affinity="open -a Affinity"
