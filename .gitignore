@@ -1,4 +1,7 @@
 *.local
+*.bak
+*.orig
+.DS_Store
 .npm
 node_modules/
-package-lock.json 
+package-lock.json
