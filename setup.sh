@@ -64,6 +64,27 @@ link_zshenv() {
     link "zshenv" "zshenv.local"
 }
 
+# Configure an npm install cooldown so freshly published package versions aren't
+# installed until they've been public for a few days — a cheap mitigation against
+# "publish-and-race" supply-chain attacks. Native to npm 11.10.0+; harmless to set
+# on older npm (ignored until supported).
+NPM_MIN_RELEASE_AGE_DAYS=7
+
+configure_npm_cooldown() {
+    if ! command -v npm >/dev/null 2>&1; then
+        echo "⚠ npm not found — skipping min-release-age cooldown setup."
+        return 0
+    fi
+
+    if [ "$(npm config get min-release-age 2>/dev/null)" = "$NPM_MIN_RELEASE_AGE_DAYS" ]; then
+        echo "✔ npm min-release-age already set to ${NPM_MIN_RELEASE_AGE_DAYS} day(s)."
+        return 0
+    fi
+
+    npm config set min-release-age="$NPM_MIN_RELEASE_AGE_DAYS"
+    echo "🛡  Set npm min-release-age to ${NPM_MIN_RELEASE_AGE_DAYS} day(s) (supply-chain cooldown)."
+}
+
 # 1. Create local files, if not present
 touch ~/.dotfiles/gitconfig.local
 touch ~/.dotfiles/profile.local
@@ -74,6 +95,9 @@ link "profile"
 link "zshrc"
 link_zshenv
 link_curlrc
+
+# 2b. Harden npm against supply-chain attacks with an install cooldown.
+configure_npm_cooldown
 
 # 3. Silence the "Last login:" banner in new terminal windows.
 #    login(1) only checks whether ~/.hushlogin exists; its contents are ignored,
