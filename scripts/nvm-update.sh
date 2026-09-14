@@ -34,6 +34,8 @@ PACKAGE_NAMES=$(npm list -g --depth=0 --json | jq -r '.dependencies | keys[]' | 
 echo -e "🤖 Updating to LTS."
 nvm install --lts
 nvm use --lts
+# Persist across new shells: point the default alias at latest LTS
+nvm alias default 'lts/*'
 
 NODEV=$(node -v)
 echo -e ""
