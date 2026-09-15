@@ -11,6 +11,7 @@ Personal macOS dotfiles for streamlining shell configuration across machines. Fe
   - [Shell Shortcuts](#shell-shortcuts)
   - [Application Shortcuts](#application-shortcuts)
   - [macOS System Tweaks](#macos-system-tweaks)
+  - [Homebrew packages](#homebrew-packages)
 - [Resources](#resources)
 
 <!-- markdownlint-enable MD010 -->
@@ -30,7 +31,7 @@ git clone git@github.com:terriann/dotfiles.git ~/.dotfiles
 # Run setup: symlinks, local-file stubs, silence the login banner
 bash ~/.dotfiles/setup.sh
 
-# Optional: Install Homebrew packages
+# Optional: Install Homebrew packages from the Brewfile (idempotent)
 bash ~/.dotfiles/setup/brew.sh
 
 # Optional: Apply macOS tweaks (hot corners, screenshots) - interactive
@@ -177,6 +178,26 @@ Open the current directory (or specified file) in common applications:
 **Screenshots**: saved to `~/Desktop/30 Day Retention/` instead of loose on the Desktop.
 
 **Trackpad gestures**: tap-to-click, two-finger secondary click, medium click pressure, three-finger swipes for Mission Control / App Exposé / full-screen apps, Notification Center edge swipe, and natural scrolling. Written to both the built-in and Magic Trackpad domains; a re-login may be needed for scroll-direction changes.
+
+### Homebrew packages
+
+The `Brewfile` at the repo root is the single source of truth for Homebrew packages: a handful of formulae (bash, git, gh, php, composer, and friends), a few casks (iTerm2, 1Password CLI, Nerd Fonts). It's a minimal baseline — handy-but-optional tools like databases and language runtimes are deliberately left out and installed ad hoc per project.
+
+To add or remove a package, edit the `Brewfile` and re-run the setup script. `brew bundle` is idempotent, so it skips anything already current:
+
+```bash
+bash ~/.dotfiles/setup/brew.sh
+```
+
+To check whether the machine matches the Brewfile without installing anything:
+
+```bash
+brew bundle check --file=~/.dotfiles/Brewfile
+```
+
+<!-- markdownlint-disable-next-line MD052 -->
+> [!NOTE]
+> `setup/brew.sh` never runs `brew bundle cleanup`. Because the Brewfile is a minimal baseline, cleanup would try to uninstall the ad-hoc tools that aren't listed. Run `brew bundle cleanup --file=~/.dotfiles/Brewfile` by hand only when reconciling the machine down to the Brewfile is truly the goal.
 
 ## Resources
 
