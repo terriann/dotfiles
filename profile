@@ -22,7 +22,17 @@ alias clear-history="read -q 'REPLY?Are you sure you want to clear history? [y/N
 # Needs EXTENDED_HISTORY (set below) for the time and elapsed columns.
 # 'histt' = last 16; 'histt -100' = last 100; 'histt 1' = everything.
 alias histt="fc -l -D -t '%a %Y-%m-%d %H:%M:%S'"
-alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
+# Update Homebrew, then print top-level installs so I can self-audit for cruft.
+# 'brew leaves' = formulae nothing else depends on; casks listed separately.
+brewup() {
+  brew update; brew upgrade; brew cleanup; brew doctor
+  local m=$'\033[1;35m' c=$'\033[1;36m' b=$'\033[1m' r=$'\033[0m'
+  printf '\n%s##%s %sReview the lists below for formulae or casks no longer in use that can be uninstalled%s\n\n' "$c" "$r" "$b" "$r"
+  printf '%s==>%s %sTop-level formulae (brew leaves):%s\n' "$m" "$r" "$b" "$r"
+  brew leaves
+  printf '%s==>%s %sCasks (brew list --cask):%s\n' "$m" "$r" "$b" "$r"
+  brew list --cask
+}
 alias npmup='bash ~/.dotfiles/scripts/npm-packages.sh before && nvm install-latest-npm  && npm update -g && bash ~/.dotfiles/scripts/npm-packages.sh after'
 alias nodeup='source ~/.dotfiles/scripts/nvm-update.sh'
 eject-all() {
