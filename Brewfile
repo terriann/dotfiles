@@ -23,6 +23,10 @@ brew "tree"             # Directory tree viewer
 brew "wget"             # Network file downloader
 brew "zizmor"           # Security auditing for GitHub Actions workflows
 
+# ── Commit signing ───────────────────────────────────────────────────────────
+brew "gnupg"            # GPG for signing commits (replaces GPG Suite / MacGPG2)
+brew "pinentry-mac"     # GUI passphrase entry + Keychain caching for gpg-agent
+
 # ── GUI apps ─────────────────────────────────────────────────────────────────
 cask "1password-cli"    # 1Password command-line tool
 cask "devtoys"          # Developer utilities (Swiss-army knife)
