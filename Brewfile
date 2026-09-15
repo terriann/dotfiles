@@ -18,10 +18,14 @@ brew "exiftool"         # Read/write image and media metadata
 brew "gh"               # GitHub CLI
 brew "git"              # Git (newer than Xcode's bundled build)
 brew "imagemagick-full" # Image manipulation (full feature set)
+brew "jq"               # Command-line JSON processor
+brew "tree"             # Directory tree viewer
+brew "wget"             # Network file downloader
 brew "zizmor"           # Security auditing for GitHub Actions workflows
 
 # ── GUI apps ─────────────────────────────────────────────────────────────────
 cask "1password-cli"    # 1Password command-line tool
+cask "devtoys"          # Developer utilities (Swiss-army knife)
 cask "homebrew-app"     # Homebrew's official GUI (BrewUI)
 cask "iterm2"           # Terminal emulator
 
