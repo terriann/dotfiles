@@ -46,8 +46,9 @@
 	# Force signing by default.
 	gpgsign = true
 [gpg]
-    # Use GPG2 by default.
-	program = gpg2
+    # Use Homebrew's gpg (native). Machine-specific full paths can override
+    # this in gitconfig.local.
+	program = gpg
 [include]
   # Use local gitconfig.local file for overrides that don't belong in the public repo.
   path = ~/.dotfiles/gitconfig.local
