@@ -1,51 +1,44 @@
 #!/bin/bash
+#
+# Install and update Homebrew packages from the repo Brewfile.
+#
+# Usage:
+#   ./setup/brew.sh
+#
+# The Brewfile at the repo root is the source of truth. To add or remove a
+# package, edit the Brewfile and re-run this script — `brew bundle` is
+# idempotent and skips anything already current.
+#
+# NOTE: this script deliberately does NOT run `brew bundle cleanup`. The
+# Brewfile is a minimal baseline, so cleanup would try to uninstall handy
+# tools installed ad hoc (databases, language runtimes, etc.). Run cleanup by
+# hand only when you truly want to reconcile down to the Brewfile.
 
-# Install homebrew (will also install Xcode CLI tool)
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+set -euo pipefail
 
-# Install git
-brew install git
+# Resolve paths relative to this script so it works from any working directory.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BREWFILE="$SCRIPT_DIR/../Brewfile"
 
-# install exiftool
-brew install exiftool
+# Homebrew must be installed first (its installer also pulls the Xcode CLI tools).
+if ! command -v brew >/dev/null 2>&1; then
+    echo "⚠ Homebrew not found. Install it first:"
+    echo '    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+    echo "  Then re-run this script. See https://brew.sh for details."
+    exit 1
+fi
 
-# install tree command
-brew install tree
+if [ ! -f "$BREWFILE" ]; then
+    echo "⚠ Brewfile not found at $BREWFILE"
+    exit 1
+fi
 
-# Install wget
-brew install wget
+# Freshen formulae metadata so we install current versions.
+echo "==> Updating Homebrew"
+brew update
 
-# Install cask
-brew tap caskroom/cask
+# Install everything declared in the Brewfile.
+echo "==> Applying Brewfile: $BREWFILE"
+brew bundle --file="$BREWFILE"
 
-# Install Core Casks Apps
-echo Install Core Apps
-brew install --cask alfred
-brew install --cask dropbox
-brew install --cask little-snitch
-brew install --cask 1password
-brew install --cask firefox
-brew install --cask spotify
-
-# Developer Tools
-echo install Xcode
-xcode-select —install
-
-echo install php
-brew install php
-
-echo Install Applications & Tools Tools
-brew cask install --appdir="~/Applications" cyberduck
-brew cask install --appdir="~/Applications" visual-studio-code
-brew cask install --appdir="~/Applications" iterm2
-brew cask install --appdir="~/Applications" sublime-text
-brew cask install --appdir="~/Applications" mysqlworkbench
-brew cask install --appdir="~/Applications" docker
-brew cask install --appdir="~/Applications" docker-toolbox
-brew cask install --appdir="/Applications" charles
-brew cask install --appdir="/Applications" vagrant
-brew cask install --appdir="/Applications" dash
-
-brew install --cask google-chrome
-brew install --cask chrome-devtools
-brew install --cask brave-browser
+echo "✔ Homebrew packages are in sync with the Brewfile."
