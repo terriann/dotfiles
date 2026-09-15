@@ -10,6 +10,10 @@ export NVM_DIR="$HOME/.nvm"
 # Add ~/bin to PATH
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Homebrew's python@3.13 keeps unversioned python3/pip3 out of the main bin;
+# add its libexec so `python3` resolves to Homebrew, not the broken Xcode stub.
+export PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Completion system + case-insensitive matching (lowercase input matches

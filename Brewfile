@@ -11,6 +11,7 @@
 # ── Languages ────────────────────────────────────────────────────────────────
 brew "php"              # PHP (latest)
 brew "composer"         # PHP dependency manager (requires php)
+brew "python@3.13"      # Python 3.13 (zshrc puts its python3/pip3 on PATH)
 
 # ── CLI ──────────────────────────────────────────────────────────────────────
 brew "bash"             # Modern Bash (macOS ships an ancient 3.2)
